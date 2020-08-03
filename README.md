@@ -74,6 +74,9 @@ rm -rf ~/fonts
   - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Regular
   - https://github.com/JetBrains/JetBrainsMono
   - https://github.com/adobe-fonts/source-code-pro
+- Other Vim Themes:
+  - https://github.com/joshdick/onedark.vim
+  - 
 
 ---
 
