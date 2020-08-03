@@ -20,9 +20,9 @@ bash ~/.fzf/install
 
 
 ## Install Oh-my-zsh
-wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O install-fzf.sh
-bash install-fzf.sh
-
+wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O install-ohmyzsh.sh
+bash install-ohmyzsh.sh
+rm -rf install-ohmyzsh.sh
 
 ## Zsh Plugins
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git 	 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -33,7 +33,7 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			 ${ZSH_CUSTO
 
 ## tmux Plugins
 git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
-ln -s -f ~/.tmux/.tmux.conf
+ln -v -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local ~
 
 
