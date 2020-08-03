@@ -41,6 +41,11 @@ rm -rf ~/fonts
 
 ---
 
+## Pre-requisites
+- `$TERM` must be `xterm-256color`
+- `$SHELL` must be `zsh`
+
+
 ## Tools used
 
 - Fonts: 
@@ -53,8 +58,9 @@ rm -rf ~/fonts
   - lsd
   - fzf
   - thefuck
+  - tmux
 - Awesome Plugins:
-  - .tmux
+  - .tmux - https://github.com/gpakosz/.tmux
 - Other Font:
   - https://github.com/powerline/fonts.git
   - https://github.com/ryanoasis/nerd-fonts.git
@@ -70,6 +76,7 @@ rm -rf ~/fonts
 ### In-progress Work
 
 ```
+chsh -s $(which zsh)
 
 https://github.com/sorin-ionescu/prezto
 

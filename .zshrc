@@ -29,21 +29,19 @@ plugins=(
 
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-completions
 )
 
 
 source $ZSH/oh-my-zsh.sh
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload -U compinit && compinit
+autoload bashcompinit && bashcompinit
 
 
-autoload bashcompinit
-bashcompinit
 
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-
+export POWERLEVEL9K_MODE='nerdfont-complete'
 
 export LANGUAGE="en_US.UTF-8"
 export LANG="${LANGUAGE}"
@@ -58,12 +56,10 @@ export HISTCONTROL=ignoreboth
 export GO111MODULE=on
 
 # eval "$(pyenv init -)"
-eval $(thefuck --alias)
 # eval "$(register-python-argcomplete pmbootstrap)"
 
-
-# source /usr/local/etc/bash_completion.d
-command -v awless && source <(awless completion zsh)
+command -v thefuck 2&>1 > /dev/null && eval $(thefuck --alias)
+command -v awless 2&>1 > /dev/null && source <(awless completion zsh)
 # source <(minikube completion zsh)
 # source <(python3 -m poetry completions zsh)
 
@@ -73,8 +69,8 @@ change_tor_node() {
 }
 
 
-alias erc="$EDITOR $HOME/.zshrc"
-alias src="source $HOME/.zshrc"
+alias erc="$EDITOR ~/.zshrc"
+alias src="source ~/.zshrc"
 alias ls="lsd"
 alias todo="$EDITOR ~/todo.txt"
 alias cip="curl https://wtfismyip.com/json"
@@ -100,9 +96,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/Users/viz/tools:/Users/viz/go/bin:$PATH"
+export PATH="~/tools:~/go/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export KUBECONFIG="/Users/viz/.kube/config:/Users/viz/.kube/eks_config:/Users/viz/.kube/kubesail_config"
+export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
 
 function zz_extract_handshake() {
 	captured_pcap="$1"
@@ -119,6 +115,7 @@ if [[ "$OSTYPE" != darwin* ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # neofetch
