@@ -31,6 +31,8 @@ sudo apt-get install silversearcher-ag htop ranger
 ## Install Programming Tools
 sudo apt-get install python python-pip python3 python3-pip
 
+## Installing Tools
+# sudo apt-get install firefox firefox-dev-edition chromium vlc
 
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"
 
