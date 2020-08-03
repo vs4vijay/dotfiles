@@ -2,6 +2,8 @@
 
 ## Installation
 
+- Install Terminator: `sudo apt-get install terminator`
+- Open Terminator and Run following commands:
 ```shell
 git clone git@github.com:vs4vijay/dotfiles.git
 cd dotfiles
@@ -25,7 +27,7 @@ config config status.showUntrackedFiles no
 
 https://github.com/sorin-ionescu/prezto
 
-
+ln -sv “~/.dotfiles/git/.gitconfig” ~
 
 set backspace=indent,eol,start
 
@@ -66,5 +68,10 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:clear'
 
 # Export hostory to a different file
 export HISTFILE="${HOME}/.history/${CURRENT_SHELL}.history.txt"
+
+
+
+alias change_tor_ip="printf 'AUTHENTICATE "password"\r\nSIGNAL NEWNYM\r\n' | nc 127.0.0.1 9051"
+alias change_tor_ip="sudo killall -HUP tor"
 
 ```
