@@ -51,7 +51,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vimwiki/vimwiki'
+" Plugin 'vimwiki/vimwiki'
 
 Plugin 'joshdick/onedark.vim' 
 Plugin 'arcticicestudio/nord-vim'

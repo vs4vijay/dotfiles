@@ -45,7 +45,16 @@ rm -rf ~/fonts
 
 - Patched Fonts: https://github.com/powerline/fonts.git
 - Vim:
-  - https://github.com/vim-airline/vim-airline
+  - Theme: https://github.com/vim-airline/vim-airline
+  - Plugin Manager: Vundle
+- Awesome Commands:
+  - lsd
+  - fzf
+  - thefuck
+- Awesome Plugins:
+  - .tmux
+- Other Themes:
+  - 
 
 ---
 

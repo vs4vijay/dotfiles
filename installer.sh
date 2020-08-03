@@ -42,6 +42,9 @@ sudo apt-get install fonts-powerline
 # bash ~/fonts/install.sh
 # rm -rf ~/fonts
 
+## Install Vim Plugin Manager
+git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 ## Install Utilities
 sudo apt-get install silversearcher-ag htop ranger
