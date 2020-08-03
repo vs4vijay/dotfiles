@@ -1,4 +1,4 @@
-export ZSH="/Users/viz/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
@@ -88,9 +88,21 @@ alias zz_bettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon 
 alias create_venv="python3 -m venv .venv"
 alias activate_venv="source .venv/bin/activate"
 
+
+if [ -d "/usr/local/sbin" ] ; then
+    PATH="/usr/local/sbin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$PATH:/Users/viz/tools:/Users/viz/go/bin"
-export PATH="$PATH:$HOME/.local/bin"
 export KUBECONFIG="/Users/viz/.kube/config:/Users/viz/.kube/eks_config:/Users/viz/.kube/kubesail_config"
 
 function zz_extract_handshake() {
@@ -103,8 +115,12 @@ function zz_extract_handshake() {
 	tshark -r "${captured_pcap}" -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype == 0x05 || eapol) && wlan.addr == ${filter_bssid}" -2 -F pcap -w "${target_pcap}.cap" 
 }
 
+# Mac related configuration
+if [[ "$OSTYPE" != darwin* ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 
 # neofetch
 . "/Users/viz/.acme.sh/acme.sh.env"

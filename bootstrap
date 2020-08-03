@@ -9,6 +9,7 @@ function install() {
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
 		--exclude "old" \
+		--exclude "fonts" \
 		--exclude "scripts" \
 		--exclude "bootstrap" \
 		--exclude "README.md" \

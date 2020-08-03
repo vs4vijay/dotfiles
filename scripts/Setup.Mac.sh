@@ -4,13 +4,22 @@
 
 # xcode-select --install
 
+function setup_name() {
+  echo "Enter new hostname of the machine (e.g. viz-macbook)"
+  read hostname
+  echo "[+] Setting new hostname: $hostname"
+  scutil --set HostName "$hostname"
+  comp_name=$(sudo scutil --get HostName | tr '-' '.')
+  echo "[+] Setting computer name: $comp_name"
+  scutil --set ComputerName "$comp_name"
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$comp_name"
+}
 
 if hash brew; then
-    echo "[+] brew Already Installed"
+  echo "[+] brew Already Installed"
 else
-    echo "[-] brew Not Installed, Installing brew" >&2
-
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "[-] brew Not Installed, Installing brew" >&2
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # brew bundle

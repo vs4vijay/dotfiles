@@ -2,5 +2,10 @@
 	name = vs4vijay
 	email = vs4vijay@gmail.com
 
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
 [core]
 	hooksPath = /Users/viz/.git/hooks
