@@ -65,7 +65,10 @@ sudo apt-get install python3 python3-pip
 
 
 ## Install Softwares
-sudo apt-get install firefox firefox-dev-edition chromium vlc
+sudo apt-get install firefox chromium-browser vlc
+
+# sudo apt-get install timewarrior
+# wine
 
 
 sudo snap install standard-notes
