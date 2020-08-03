@@ -15,6 +15,7 @@ plugins=(
   sudo
   man
   osx
+  extract
 
   git
   github
