@@ -21,8 +21,8 @@ function bootstrap_old() {
 function bootstrap() {
 	ln -sv ~/dotfiles/.zshrc ~/.zshrc
 	ln -sv ~/dotfiles/.vimrc ~/.vimrc
+	ln -sv ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 	ln -sv ~/dotfiles/git/.gitconfig ~/.gitconfig
-
 }
 
 
