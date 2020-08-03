@@ -48,19 +48,23 @@ rm -rf ~/fonts
 
 ## Tools used
 
-- Fonts: 
-  - NerdFont: 
-  	- https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono
-- Vim:
-  - Theme: https://github.com/vim-airline/vim-airline
-  - Plugin Manager: Vundle
-- Awesome Commands:
+- Tools:
+  - zsh
   - lsd
   - fzf
   - thefuck
   - tmux
-- Awesome Plugins:
+- Zsh:
+  - Plugin: Oh-my-zsh
+  - Theme: 
+    - Powerlevel10k: https://github.com/romkatv/powerlevel10k
+- Vim:
+  - Theme: https://github.com/vim-airline/vim-airline
+  - Plugin Manager: Vundle
+- Tmux:
   - .tmux - https://github.com/gpakosz/.tmux
+- Fonts: 
+  - NerdFont: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono
 - Other Font:
   - https://github.com/powerline/fonts.git
   - https://github.com/ryanoasis/nerd-fonts.git
