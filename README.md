@@ -1,8 +1,15 @@
 # dotfiles
 
-## Installation
+## Installation via Installer
 
-- Install Terminator: `sudo apt-get install terminator`
+- Install Terminator: `sudo apt-get install terminator wget`
+- Open Terminator and Run following commands:
+```shell
+wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash
+```
+
+## Installation via Git
+- Install Terminator: `sudo apt-get install terminator git`
 - Open Terminator and Run following commands:
 ```shell
 git clone git@github.com:vs4vijay/dotfiles.git
@@ -10,8 +17,7 @@ cd dotfiles
 ./bootstrap
 ```
 
-
-## Another Way to Manage
+## Another Way to Manage dotfiles
 
 ```shell
 git init --bare ~/.dotfiles
