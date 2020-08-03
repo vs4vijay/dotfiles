@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 # git pull origin master;
 
-function bootstrap() {
+function bootstrap_old() {
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
@@ -17,6 +17,14 @@ function bootstrap() {
 		-avh --no-perms . ~/test;
 	source ~/.bash_profile;
 }
+
+function bootstrap() {
+	ln -sv ~/dotfiles/.zshrc ~/.zshrc
+	ln -sv ~/dotfiles/.vimrc ~/.vimrc
+	ln -sv ~/dotfiles/git/.gitconfig ~/.gitconfig
+
+}
+
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	bootstrap;
