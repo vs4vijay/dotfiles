@@ -1,0 +1,6 @@
+[user]
+	name = vs4vijay
+	email = vs4vijay@gmail.com
+
+[core]
+	hooksPath = /Users/viz/.git/hooks
