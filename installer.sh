@@ -36,7 +36,10 @@ cp ~/.tmux/.tmux.conf.local ~
 
 
 ## Install Fonts
-sudo apt-get install fonts-powerline
+# sudo apt-get install fonts-powerline
+
+# git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+# cd nerd-fonts
 
 # git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
 # bash ~/fonts/install.sh

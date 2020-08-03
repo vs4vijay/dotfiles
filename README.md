@@ -43,7 +43,9 @@ rm -rf ~/fonts
 
 ## Tools used
 
-- Patched Fonts: https://github.com/powerline/fonts.git
+- Fonts: 
+  - NerdFont: 
+  	- https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono
 - Vim:
   - Theme: https://github.com/vim-airline/vim-airline
   - Plugin Manager: Vundle
@@ -53,8 +55,15 @@ rm -rf ~/fonts
   - thefuck
 - Awesome Plugins:
   - .tmux
-- Other Themes:
-  - 
+- Other Font:
+  - https://github.com/powerline/fonts.git
+  - https://github.com/ryanoasis/nerd-fonts.git
+  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
+  - https://github.com/tonsky/FiraCode
+  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Regular
+  - https://github.com/JetBrains/JetBrainsMono
+  - https://github.com/adobe-fonts/source-code-pro
 
 ---
 
