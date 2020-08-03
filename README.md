@@ -27,11 +27,35 @@ config config status.showUntrackedFiles no
 
 ---
 
+- Use patched fonts on terminal:
+```shell
+sudo apt-get install fonts-powerline
+
+OR
+
+git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
+bash ~/fonts/install.sh
+rm -rf ~/fonts
+
+```
+
+---
+
+## Tools used
+
+- Patched Fonts: https://github.com/powerline/fonts.git
+- Vim:
+  - https://github.com/vim-airline/vim-airline
+
+---
+
 ### In-progress Work
 
 ```
 
 https://github.com/sorin-ionescu/prezto
+
+PyENV
 
 ln -sv “~/.dotfiles/git/.gitconfig” ~
 
@@ -50,6 +74,8 @@ set incsearch		" do incremental searching
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
 
 ln -v
+
+
 
 if [[ "$OSTYPE" != darwin* ]]; then
   echo "Mac"

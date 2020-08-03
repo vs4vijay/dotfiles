@@ -57,14 +57,13 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HISTCONTROL=ignoreboth
 export GO111MODULE=on
 
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 eval $(thefuck --alias)
 # eval "$(register-python-argcomplete pmbootstrap)"
 
 
-source /usr/local/etc/bash_completion.d
-source <(kubectl completion zsh)
-source <(awless completion zsh)
+# source /usr/local/etc/bash_completion.d
+command -v awless && source <(awless completion zsh)
 # source <(minikube completion zsh)
 # source <(python3 -m poetry completions zsh)
 
@@ -82,7 +81,6 @@ alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
 alias qw="ssh pixel.as python3 /home/ubuntu/tools/pwndb/pwndb.py --target"
 alias zz_bettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
-
 
 # Python Related Alias
 alias create_venv="python3 -m venv .venv"
@@ -102,7 +100,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="$PATH:/Users/viz/tools:/Users/viz/go/bin"
+export PATH="/Users/viz/tools:/Users/viz/go/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 export KUBECONFIG="/Users/viz/.kube/config:/Users/viz/.kube/eks_config:/Users/viz/.kube/kubesail_config"
 
 function zz_extract_handshake() {
@@ -123,5 +122,4 @@ fi
 
 
 # neofetch
-. "/Users/viz/.acme.sh/acme.sh.env"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+# . "/Users/viz/.acme.sh/acme.sh.env"

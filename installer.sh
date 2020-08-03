@@ -7,7 +7,7 @@ sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove
 
 
 ## Install Essentials
-sudo apt-get install build-essential ruby-dev libssl-dev libpcap-dev net-tools screen zsh curl wget git vim
+sudo apt-get install build-essential ruby-dev libssl-dev libpcap-dev net-tools screen tmux zsh curl wget git vim
 
 
 ## Install mosh
@@ -23,14 +23,30 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O install-fzf.sh
 bash install-fzf.sh
 
+
 ## Zsh Plugins
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions 		 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
+## tmux Plugins
+git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf
+cp ~/.tmux/.tmux.conf.local ~
+
+
+## Install Fonts
+sudo apt-get install fonts-powerline
+
+# git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
+# bash ~/fonts/install.sh
+# rm -rf ~/fonts
+
 
 ## Install Utilities
 sudo apt-get install silversearcher-ag htop ranger
+
+sudo pip3 install thefuck
 
 wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb -O lsd.deb
 sudo dpkg -i lsd.deb
@@ -56,6 +72,10 @@ echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] h
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code
+
+
+## Install DevOps tools
+# curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
 
 
 
