@@ -52,7 +52,7 @@ git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vu
 vim +PluginInstall +qall
 
 ## Install Utilities
-sudo apt-get install silversearcher-ag htop ranger
+sudo apt-get install silversearcher-ag htop ranger ncdu
 
 sudo pip3 install thefuck
 
@@ -89,11 +89,42 @@ sudo apt-get install code
 
 
 ## Install Development Tools
+
+mkdir -p "~/tools"
+cd "~/tools"
+
+# NodeJS
+sudo curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o /usr/local/bin/n
+sudo chmod 755 /usr/local/bin/n
+sudo bash n lts
+
+# Go
+# wget -c https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+
+# AWS related tool
 # curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
+
+# Docker
+sudo apt-get install docker.io
+
+# Kubernetes
+wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-get update
+sudo apt-get install kubectl
+# sudo apt-get install kubeadm kubelet
+
+
+# Kubernetes Cluster: Kind
+# GO111MODULE="on" go get sigs.k8s.io/kind@v0.8.1 
+
+
+# Virtual Box
+sudo apt-get install virtualbox
+# sudo apt-get install virtualbox-ext-pack
 
 
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"
-
 
 
 ## Bootstrapping

@@ -49,18 +49,6 @@ autoload -U compinit && compinit
 autoload bashcompinit && bashcompinit
 
 
-export LANGUAGE="en_US.UTF-8"
-export LANG="${LANGUAGE}"
-export LC_ALL="${LANGUAGE}"
-export LC_CTYPE="${LANGUAGE}"
-
-export EDITOR=vim
-export PAGER=less
-
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HISTCONTROL=ignoreboth
-export GO111MODULE=on
-
 # eval "$(pyenv init -)"
 # eval "$(register-python-argcomplete pmbootstrap)"
 
@@ -101,9 +89,24 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="~/tools:~/go/bin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export LANGUAGE="en_US.UTF-8"
+export LANG="${LANGUAGE}"
+export LC_ALL="${LANGUAGE}"
+export LC_CTYPE="${LANGUAGE}"
+
+export EDITOR=vim
+export PAGER=less
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HISTCONTROL=ignoreboth
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GO111MODULE=on
+
+export PATH="~/tools:$PATH"
+export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
 export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
 
 function zz_extract_handshake() {
