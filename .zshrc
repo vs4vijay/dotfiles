@@ -52,8 +52,8 @@ autoload bashcompinit && bashcompinit
 ## Sourcing
 [[ -f ~/.fzf.zsh  ]] && source ~/.fzf.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
-command -v thefuck 2&>1 > /dev/null && eval $(thefuck --alias)
-command -v awless 2&>1 > /dev/null && source <(awless completion zsh)
+command -v thefuck 2>&1 > /dev/null && eval $(thefuck --alias)
+command -v awless 2>&1 > /dev/null && source <(awless completion zsh)
 # source <(minikube completion zsh)
 # source <(python3 -m poetry completions zsh)
 
@@ -87,6 +87,7 @@ export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
 alias erc="$EDITOR ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ls="lsd"
+alias ln="ln -v"
 alias todo="$EDITOR ~/todo.txt"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
