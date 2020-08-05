@@ -23,6 +23,7 @@ function bootstrap() {
 	ln -sv ~/dotfiles/.vimrc ~/.vimrc
 	ln -sv ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 	ln -sv ~/dotfiles/git/.gitconfig ~/.gitconfig
+	ln -sv ~/dotfiles/.conkyrc ~/.conkyrc
 }
 
 
