@@ -93,10 +93,16 @@ sudo apt-get install code
 mkdir -p "~/tools"
 cd "~/tools"
 
-# NodeJS
+# NodeJS and npm
 sudo curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o /usr/local/bin/n
 sudo chmod 755 /usr/local/bin/n
 sudo bash n lts
+
+# Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install --no-install-recommends yarn
 
 # Go
 # wget -c https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
@@ -117,11 +123,25 @@ sudo apt-get install kubectl
 
 # Kubernetes Cluster: Kind
 # GO111MODULE="on" go get sigs.k8s.io/kind@v0.8.1 
+# sudo snap install microk8s --classic 
 
 
 # Virtual Box
 sudo apt-get install virtualbox
 # sudo apt-get install virtualbox-ext-pack
+
+# GoLand
+# sudo snap install goland --classic
+
+
+## Other Softwares
+
+sudo apt-get install wallch
+
+
+## Misc
+
+# sudo apt-get install libgconf2-dev
 
 
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"

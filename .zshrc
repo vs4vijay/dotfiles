@@ -49,20 +49,41 @@ autoload -U compinit && compinit
 autoload bashcompinit && bashcompinit
 
 
-# eval "$(pyenv init -)"
-# eval "$(register-python-argcomplete pmbootstrap)"
-
+## Sourcing
+[[ -f ~/.fzf.zsh  ]] && source ~/.fzf.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 command -v thefuck 2&>1 > /dev/null && eval $(thefuck --alias)
 command -v awless 2&>1 > /dev/null && source <(awless completion zsh)
 # source <(minikube completion zsh)
 # source <(python3 -m poetry completions zsh)
 
-change_tor_node() {
-  echo -e 'AUTHENTICATE ""\r\nsignal NEWNYM\r\nQUIT' | nc 127.0.0.1 9051
-  tip
-}
+# eval "$(pyenv init -)"
+# eval "$(register-python-argcomplete pmbootstrap)"
 
 
+## Environment Variables
+export LANGUAGE="en_US.UTF-8"
+export LANG="${LANGUAGE}"
+export LC_ALL="${LANGUAGE}"
+export LC_CTYPE="${LANGUAGE}"
+
+export EDITOR=vim
+export PAGER=less
+export PATH="/usr/local/sbin:~/bin:~/.local/bin:$PATH"
+export PATH="~/tools:$PATH"
+export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HISTCONTROL=ignoreboth
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GO111MODULE=on
+export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
+
+
+## Aliases
 alias erc="$EDITOR ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ls="lsd"
@@ -77,37 +98,11 @@ alias create_venv="python3 -m venv .venv"
 alias activate_venv="source .venv/bin/activate"
 
 
-if [ -d "/usr/local/sbin" ] ; then
-    PATH="/usr/local/sbin:$PATH"
-fi
-
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-export LANGUAGE="en_US.UTF-8"
-export LANG="${LANGUAGE}"
-export LC_ALL="${LANGUAGE}"
-export LC_CTYPE="${LANGUAGE}"
-
-export EDITOR=vim
-export PAGER=less
-
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HISTCONTROL=ignoreboth
-
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export GO111MODULE=on
-
-export PATH="~/tools:$PATH"
-export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
-export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
+## Functions
+function change_tor_node() {
+  echo -e 'AUTHENTICATE ""\r\nsignal NEWNYM\r\nQUIT' | nc 127.0.0.1 9051
+  tip
+}
 
 function zz_extract_handshake() {
 	captured_pcap="$1"
@@ -119,15 +114,11 @@ function zz_extract_handshake() {
 	tshark -r "${captured_pcap}" -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype == 0x05 || eapol) && wlan.addr == ${filter_bssid}" -2 -F pcap -w "${target_pcap}.cap" 
 }
 
+
 # Mac related configuration
 if [[ "$OSTYPE" != darwin* ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
-
-
-[[ -f ~/.fzf.zsh  ]] && source ~/.fzf.zsh
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 
 # neofetch
