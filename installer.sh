@@ -25,10 +25,10 @@ bash install-ohmyzsh.sh
 rm -rf install-ohmyzsh.sh
 
 ## Zsh Plugins
-git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git 	 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth 1 https://github.com/zsh-users/zsh-completions.git		 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
-git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth 1 https://github.com/zsh-users/zsh-completions.git		     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
 ## tmux Plugins
@@ -52,7 +52,9 @@ git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vu
 vim +PluginInstall +qall
 
 ## Install Utilities
-sudo apt-get install silversearcher-ag htop ranger ncdu
+sudo apt-get install silversearcher-ag htop ranger ncdu mtr jq
+
+sudo apt-get install youtube-dl
 
 sudo pip3 install thefuck
 
@@ -112,6 +114,8 @@ sudo apt-get install --no-install-recommends yarn
 
 # Docker
 sudo apt-get install docker.io
+sudo apt-get install docker-compose
+sudo usermod -aG docker $USER
 
 # Kubernetes
 wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -142,7 +146,8 @@ sudo apt-get install wallch
 ## Misc
 
 # sudo apt-get install libgconf2-dev
-
+# sudo apt-get install xclip
+# go get github.com/ericchiang/pup
 
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"
 

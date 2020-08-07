@@ -70,7 +70,8 @@ export LC_CTYPE="${LANGUAGE}"
 export EDITOR=vim
 export PAGER=less
 export PATH="/usr/local/sbin:~/bin:~/.local/bin:$PATH"
-export PATH="~/tools:$PATH"
+export PATH="$HOME/tools:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
