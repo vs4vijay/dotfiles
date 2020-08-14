@@ -11,11 +11,12 @@ echo "
 Type=Application
 Name=${name}
 Comment=Firefox Profile (${name})
-Exec=firefox -no-remote -P ${name}
+Exec=firefox -no-remote -P ${name} --class ${name}
 Icon=firefox
 Terminal=false
 StartupNotify=false
-" > "/usr/share/applications/${name}.desktop"
+StartupWMClass=${name}
+" > "/usr/share/applicateons/${name}Firefox.desktop"
 
 # desktop-file-install <name>.desktop
 # icons at /usr/share/pixmaps/

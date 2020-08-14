@@ -68,7 +68,7 @@ filetype plugin indent on
 syntax on
 
 
-colorscheme nord
+" colorscheme nord
 
 if has('nvim')
   colorscheme onedark

@@ -24,6 +24,9 @@ function bootstrap() {
 	ln -sv ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 	ln -sv ~/dotfiles/git/.gitconfig ~/.gitconfig
 	ln -sv ~/dotfiles/.conkyrc ~/.conkyrc
+
+	mkdir -p ~/.config/i3
+	ln -sv ~/dotfiles/.config/i3/.config ~/.config/i3/.config
 }
 
 
