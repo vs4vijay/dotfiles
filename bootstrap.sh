@@ -4,20 +4,6 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 # git pull origin master;
 
-function bootstrap_old() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude "old" \
-		--exclude "fonts" \
-		--exclude "scripts" \
-		--exclude "bootstrap" \
-		--exclude "README.md" \
-		--exclude "LICENSE" \
-		-avh --no-perms . ~/test;
-	source ~/.bash_profile;
-}
-
 function bootstrap() {
 	ln -sv ~/dotfiles/.zshrc ~/.zshrc
 	ln -sv ~/dotfiles/.vimrc ~/.vimrc
@@ -26,7 +12,7 @@ function bootstrap() {
 	ln -sv ~/dotfiles/.conkyrc ~/.conkyrc
 
 	mkdir -p ~/.config/i3
-	ln -sv ~/dotfiles/.config/i3/.config ~/.config/i3/.config
+	ln -sv ~/dotfiles/.config/i3/config ~/.config/i3/config
 }
 
 

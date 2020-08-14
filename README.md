@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O 
 ```shell
 git clone git@github.com:vs4vijay/dotfiles.git
 cd dotfiles
-./bootstrap
+bash bootstrap.sh
 ```
 
 ## Another Way to Manage dotfiles

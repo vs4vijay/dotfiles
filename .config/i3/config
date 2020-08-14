@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -163,16 +163,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-        position top
-        # height 25
-        workspace_buttons yes
-}
+######## VIZ CONFIG
+
+# bar {
+#         status_command i3status
+#         height 25
+#         workspace_buttons no
+#         # position top
+# }
+
+bindsym $mod+d exec rofi -show run
 
 bindsym $mod+shift+x exec i3lock
+
+for_window [class="^.*"] border pixel 0
+new_window 1pixel
+
+exec_always ~/.config/polybar/launch.sh
+
 
 ############ MOUSE 
 
@@ -196,13 +204,15 @@ bindsym button3 floating toggle
 # assign [class="Firefox"]                                       → 1
 
 
+
 ############ BACKGROUD APPS
 
 # dropbox
 exec dropbox start
 
 # conky
-exec --no-startup-id conky
+# exec --no-startup-id conky
+
 
 
 ############ SHORTCUTS APPS
@@ -213,11 +223,10 @@ bindsym $mod+F1 exec firefox;workspace 1;focus
 bindsym Control+Print exec gnome-screenshot -i
 
 
+
 ############ SHORTCUTS WORKSPACES 
 
-
 # next/previous workspace
-
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
