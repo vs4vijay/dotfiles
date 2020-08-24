@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-## Installing i3 wm, rofi
-sudo apt-get install i3 rofi
+## Installing i3 wm, rofi, compton
+sudo apt-get install i3 rofi compton
 
 ## Installing polybar
 

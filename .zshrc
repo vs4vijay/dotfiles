@@ -77,11 +77,14 @@ export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HISTCONTROL=ignoreboth
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/go"
 export GO111MODULE=on
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
+
+export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 
 ## Aliases
@@ -89,11 +92,23 @@ alias erc="$EDITOR ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ls="lsd"
 alias ln="ln -v"
+
+# vim
+alias vi="vim"
+# alias vim="nvim"
+
+alias grep="grep --color=auto"
+
 alias todo="$EDITOR ~/todo.txt"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
-alias qw="ssh pixel.as python3 /home/ubuntu/tools/pwndb/pwndb.py --target"
+alias qw="ssh azpixel python3 qw --target"
 alias zz_bettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
+
+# fzf options
+export FZF_DEFAULT_OPTS="--color bw --reverse --border"
+export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Python Related Alias
 alias create_venv="python3 -m venv .venv"
@@ -121,6 +136,9 @@ function zz_extract_handshake() {
 if [[ "$OSTYPE" != darwin* ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# xrdb -merge .Xresources
 
 
 # neofetch

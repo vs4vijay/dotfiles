@@ -52,7 +52,7 @@ git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vu
 vim +PluginInstall +qall
 
 ## Install Utilities
-sudo apt-get install silversearcher-ag htop ranger ncdu mtr jq
+sudo apt-get install silversearcher-ag htop ranger tree ncdu mtr jq
 
 sudo apt-get install youtube-dl
 
