@@ -90,6 +90,11 @@ sudo apt-get update
 sudo apt-get install code
 
 
+sudo add-apt-repository ppa:unit193/encryption
+sudo apt update
+sudo apt install veracrypt
+
+
 ## Install Development Tools
 
 mkdir -p "~/tools"
@@ -150,6 +155,13 @@ sudo apt-get install wallch
 # go get github.com/ericchiang/pup
 
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"
+
+## Manual tools
+# Obsidian
+# Cryptomator
+# getsession
+# keepassxc
+# sudo snap install keepassxc
 
 
 ## Bootstrapping
