@@ -138,4 +138,7 @@ export HISTFILE="${HOME}/.history/${CURRENT_SHELL}.history.txt"
 alias change_tor_ip="printf 'AUTHENTICATE "password"\r\nSIGNAL NEWNYM\r\n' | nc 127.0.0.1 9051"
 alias change_tor_ip="sudo killall -HUP tor"
 
+bold=$(tput bold)
+norm=$(tput sgr0)
+
 ```

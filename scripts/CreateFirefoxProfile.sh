@@ -9,14 +9,14 @@ name="$1"
 echo "
 [Desktop Entry]
 Type=Application
-Name=${name}
+Name=${name}Firefox
 Comment=Firefox Profile (${name})
 Exec=firefox -no-remote -P ${name} --class ${name}
 Icon=firefox
 Terminal=false
 StartupNotify=false
 StartupWMClass=${name}
-" > "/usr/share/applicateons/${name}Firefox.desktop"
+" > "/usr/share/applications/${name}Firefox.desktop"
 
 # desktop-file-install <name>.desktop
 # icons at /usr/share/pixmaps/

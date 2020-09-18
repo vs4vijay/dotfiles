@@ -132,8 +132,10 @@ sudo apt-get install kubectl
 
 # Kubernetes Cluster: Kind
 # GO111MODULE="on" go get sigs.k8s.io/kind@v0.8.1 
-# sudo snap install microk8s --classic 
+# sudo snap install microk8s --classic
 
+# Other tools: k9s, lazydocker
+curl -sS https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 # Virtual Box
 sudo apt-get install virtualbox

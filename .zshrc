@@ -81,7 +81,7 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
 export GO111MODULE=on
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
-export KUBECONFIG="~/.kube/config:~/.kube/eks_config:~/.kube/kubesail_config"
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/eks_config:$HOME/.kube/kubesail_config"
 
 export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
