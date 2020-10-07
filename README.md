@@ -27,6 +27,14 @@ config config status.showUntrackedFiles no
 
 ---
 
+Generate SSH Keys:
+
+```
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
+```
+
+---
+
 - Use patched fonts on terminal:
 ```shell
 sudo apt-get install fonts-powerline

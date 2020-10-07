@@ -10,6 +10,11 @@ sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove
 sudo apt-get install build-essential ruby-dev libssl-dev libpcap-dev net-tools screen tmux zsh curl wget git vim
 
 
+## Bootstrap my config files
+git clone git@github.com:vs4vijay/dotfiles.git ~/dotfiles
+bash ~/dotfiles/bootstrap.sh
+
+
 ## Install mosh
 sudo apt-get install mosh
 
@@ -33,49 +38,54 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			       ${ZSH
 
 ## tmux Plugins
 git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
-ln -v -s -f ~/.tmux/.tmux.conf
-cp ~/.tmux/.tmux.conf.local ~
+# ln -v -s -f ~/.tmux/.tmux.conf
+# cp ~/.tmux/.tmux.conf.local ~
 
 
 ## Install Fonts
-# sudo apt-get install fonts-powerline
+# Install manually from "fonts" directory
 
 # git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
 # cd nerd-fonts
+
+# sudo apt-get install fonts-powerline
 
 # git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
 # bash ~/fonts/install.sh
 # rm -rf ~/fonts
 
+
 ## Install Vim Plugin Manager
 git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+
 ## Install Utilities
 sudo apt-get install silversearcher-ag htop ranger tree ncdu mtr jq
+# sudo apt-get install youtube-dl
 
-sudo apt-get install youtube-dl
-
-sudo pip3 install thefuck
-
-wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb -O lsd.deb
-sudo dpkg -i lsd.deb
-rm -rf lsd.deb
 
 ## Install Programming Tools
 sudo apt-get install python3 python3-pip
+
+sudo pip3 install thefuck
+
+wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb -O lsd.deb
+sudo dpkg -i lsd.deb
+rm -rf lsd.deb
+
 
 
 ## Install Softwares
 sudo apt-get install firefox chromium-browser vlc
 
-# sudo apt-get install timewarrior
-# wine
-
+# sudo apt-get install timewarrior taskwarrior
+# sudo apt-get install wine
 
 sudo snap install standard-notes
 
-## Install Editors (Sublime, VSCode)
+
+## Install IDEs (Sublime, VSCode, Codium)
 sudo apt-get install apt-transport-https
 
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -83,22 +93,25 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 
-
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 sudo apt-get update
 sudo apt-get install code
 
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg 
+echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
+sudo apt-get update
+sudo apt-get install codium 
 
-sudo add-apt-repository ppa:unit193/encryption
-sudo apt update
-sudo apt install veracrypt
+# sudo add-apt-repository ppa:unit193/encryption
+# sudo apt update
+# sudo apt install veracrypt
 
 
 ## Install Development Tools
 
-mkdir -p "~/tools"
-cd "~/tools"
+mkdir -p "${HOME}/tools"
+cd "${HOME}/tools"
 
 # NodeJS and npm
 sudo curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o /usr/local/bin/n
@@ -112,7 +125,7 @@ sudo apt-get update
 sudo apt-get install --no-install-recommends yarn
 
 # Go
-# wget -c https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 
 # AWS related tool
 # curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
@@ -136,9 +149,11 @@ sudo apt-get install kubectl
 
 # Other tools: k9s, lazydocker
 curl -sS https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+wget -c https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_64.tar.gz -O - | sudo tar -xz -C /usr/local/bin
+
 
 # Virtual Box
-sudo apt-get install virtualbox
+# sudo apt-get install virtualbox
 # sudo apt-get install virtualbox-ext-pack
 
 # GoLand
@@ -146,8 +161,7 @@ sudo apt-get install virtualbox
 
 
 ## Other Softwares
-
-sudo apt-get install wallch
+# sudo apt-get install wallch
 
 
 ## Misc
@@ -159,21 +173,19 @@ sudo apt-get install wallch
 # [ "${SHELL##/*/}" != "zsh" ] && echo "You might need to change default shell to zsh: `chsh -s /bin/zsh`"
 
 ## Manual tools
-# Obsidian
+# Dropbox from Software Packages
 # Cryptomator
+# Obsidian
 # getsession
 # keepassxc
 # sudo snap install keepassxc
 
 
 ## Bootstrapping
-function get_ssh_key() {
+function generate_ssh_key() {
   pub="$HOME/.ssh/id_ed25519.pub"
   echo "[+] Checking for SSH key, generating one if it does not exist..."
   [[ -f $pub ]] || ssh-keygen -t ed25519
 }
 
-get_ssh_key
-
-git clone git@github.com:vs4vijay/dotfiles.git ~/dotfiles
-bash ~/dotfiles/bootstrap
+generate_ssh_key
