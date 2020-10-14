@@ -27,32 +27,11 @@ config config status.showUntrackedFiles no
 
 ---
 
-Generate SSH Keys:
-
-```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
-```
-
----
-
-- Use patched fonts on terminal:
-```shell
-sudo apt-get install fonts-powerline
-
-OR
-
-git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
-bash ~/fonts/install.sh
-rm -rf ~/fonts
-
-```
-
----
-
 ## Pre-requisites
 - `$TERM` must be `xterm-256color`
 - `$SHELL` must be `zsh`
 
+---
 
 ## Tools used
 
@@ -88,16 +67,46 @@ rm -rf ~/fonts
 
 ---
 
+## Misc Tasks
+
+- Generate SSH Keys:
+```shell
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
+```
+
+- Use patched fonts on terminal:
+```shell
+sudo apt-get install fonts-powerline
+
+OR
+
+git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
+bash ~/fonts/install.sh
+rm -rf ~/fonts
+```
+
+- Change current shell to zsh
+```shell
+chsh -s $(which zsh)
+```
+
+---
+
+## Misc Softwares and Tools
+
+- Yakuake Terminal
+
+---
+
 ### In-progress Work
 
 ```
-chsh -s $(which zsh)
 
 https://github.com/sorin-ionescu/prezto
 
+
 PyENV
 
-ln -sv “~/.dotfiles/git/.gitconfig” ~
 
 set backspace=indent,eol,start
 
@@ -109,25 +118,24 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 
-
 # Source a local zshrc if it exists
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
 
-ln -v
 
+ln -sv “~/.dotfiles/git/.gitconfig” ~
+ln -v
 
 
 if [[ "$OSTYPE" != darwin* ]]; then
   echo "Mac"
 fi
 
+
 test -e "${HOME}/file" && source "${HOME}/file"
 [[ -f $pub ]] || ssh-keygen -t ed25519
 
 
 [ "${SHELL##/*/}" != "zsh" ] && echo 'You might need to change default shell to zsh: `chsh -s /bin/zsh`'
-
-
 
 
 # Don't put duplicate lines in the history.
@@ -142,12 +150,13 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:clear'
 export HISTFILE="${HOME}/.history/${CURRENT_SHELL}.history.txt"
 
 
-
 alias change_tor_ip="printf 'AUTHENTICATE "password"\r\nSIGNAL NEWNYM\r\n' | nc 127.0.0.1 9051"
 alias change_tor_ip="sudo killall -HUP tor"
 
+
 bold=$(tput bold)
 norm=$(tput sgr0)
+
 
 Icons:
 https://avatars3.githubusercontent.com/u/11850518?s=200&v=4
