@@ -132,6 +132,8 @@ fi
 # Windows WSL configuration
 if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
   alias code=code.exe
+  alias docker=docker.exe
+  alias docker-compose=docker-compose.exe
   alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
   alias gomain="cd /mnt/c/Main"
   alias gowork="cd /mnt/c/Main/Reporting"
