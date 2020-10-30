@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="robbyrussell"
@@ -42,16 +35,15 @@ plugins=(
 )
 
 
-source $ZSH/oh-my-zsh.sh
-
-
 autoload -U compinit && compinit
 autoload bashcompinit && bashcompinit
 
 
 ## Sourcing
+source $ZSH/oh-my-zsh.sh
 [[ -f ~/.fzf.zsh  ]] && source ~/.fzf.zsh
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh 
+[[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 command -v thefuck 2>&1 > /dev/null && eval $(thefuck --alias)
 command -v awless 2>&1 > /dev/null && source <(awless completion zsh)
 # source <(minikube completion zsh)
@@ -132,10 +124,19 @@ function zz_extract_handshake() {
 }
 
 
-# Mac related configuration
+# Mac configuration
 if [[ "$OSTYPE" != darwin* ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+# Windows WSL configuration
+if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
+  alias code=code.exe
+  alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
+  alias gomain="cd /mnt/c/Main"
+  alias gowork="cd /mnt/c/Main/Reporting"
+fi
+
 
 # alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # xrdb -merge .Xresources
