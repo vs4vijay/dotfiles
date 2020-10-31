@@ -102,6 +102,8 @@ chsh -s $(which zsh)
 
 ```
 
+git remote set-url origin <url>
+
 https://github.com/sorin-ionescu/prezto
 
 
