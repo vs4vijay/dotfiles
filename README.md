@@ -94,7 +94,9 @@ chsh -s $(which zsh)
 
 ## Misc Softwares and Tools
 
-- Yakuake Terminal
+- KDE Plasma Desktop Environment: `sudo apt-get install kde-plasma-desktop plasma-nm`
+- Yakuake Drop-down Terminal / Guake Terminal
+- Preload tool - `sudo apt-get install preload`
 
 ---
 
