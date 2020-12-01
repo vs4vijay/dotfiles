@@ -46,6 +46,8 @@ source $ZSH/oh-my-zsh.sh
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 command -v thefuck 2>&1 > /dev/null && eval $(thefuck --alias)
 command -v awless 2>&1 > /dev/null && source <(awless completion zsh)
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
+
 # source <(minikube completion zsh)
 # source <(python3 -m poetry completions zsh)
 
@@ -73,11 +75,17 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
 export GO111MODULE=on
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/eks_config:$HOME/.kube/kubesail_config"
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config:$HOME/.kube/kubesail_config"
 
 export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
+export SDKMAN_DIR="${HOME}/.sdkman"
 
+export LD_LIBRARY_PATH="/opt/oracle/instantclient_19_9"
+
+# WSL and X-Server (vcxsrv)
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+export LIBGL_ALWAYS_INDIRECT=1
 
 ## Aliases
 alias erc="$EDITOR ~/.zshrc"
@@ -132,8 +140,8 @@ fi
 # Windows WSL configuration
 if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
   alias code=code.exe
-  alias docker=docker.exe
-  alias docker-compose=docker-compose.exe
+  # alias docker=docker.exe
+  # alias docker-compose=docker-compose.exe
   alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
   alias gomain="cd /mnt/c/Main"
   alias gowork="cd /mnt/c/Main/Reporting"
