@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O 
 ```shell
 git clone git@github.com:vs4vijay/dotfiles.git
 cd dotfiles
-bash bootstrap.sh
+bash installer.sh
 ```
 
 ## Another Way to Manage dotfiles
@@ -46,24 +46,24 @@ config config status.showUntrackedFiles no
   - Theme: 
     - Powerlevel10k: https://github.com/romkatv/powerlevel10k
 - Vim:
-  - Theme: https://github.com/vim-airline/vim-airline
   - Plugin Manager: Vundle
+  - Theme: https://github.com/vim-airline/vim-airline
+  - Other Vim Themes:
+    - https://github.com/joshdick/onedark.vim
 - Tmux:
   - .tmux - https://github.com/gpakosz/.tmux
+  - tmuxinator - https://github.com/tmuxinator/tmuxinator
 - Fonts: 
   - NerdFont: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono
-- Other Font:
-  - https://github.com/powerline/fonts.git
-  - https://github.com/ryanoasis/nerd-fonts.git
-  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
-  - https://github.com/tonsky/FiraCode
-  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
-  - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Regular
-  - https://github.com/JetBrains/JetBrainsMono
-  - https://github.com/adobe-fonts/source-code-pro
-- Other Vim Themes:
-  - https://github.com/joshdick/onedark.vim
-  - 
+  - Other Fonts:
+    - https://github.com/powerline/fonts.git
+    - https://github.com/ryanoasis/nerd-fonts.git
+      - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
+      - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+      - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Regular
+    - https://github.com/tonsky/FiraCode
+    - https://github.com/JetBrains/JetBrainsMono
+    - https://github.com/adobe-fonts/source-code-pro
 
 ---
 
