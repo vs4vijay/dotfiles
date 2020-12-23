@@ -13,6 +13,8 @@ function bootstrap() {
 
 	mkdir -p ~/.config/i3
 	ln -sv ~/dotfiles/.config/i3/config ~/.config/i3/config
+
+	mkdir -p "${HOME}/tools"
 }
 
 

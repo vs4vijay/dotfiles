@@ -6,3 +6,9 @@
 	diff = auto
 	status = auto
 	branch = auto
+
+[http]
+	postBuffer = 157286400
+
+[core]
+	compression = 9

@@ -10,9 +10,14 @@ sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove
 sudo apt-get install build-essential ruby-dev libssl-dev libpcap-dev net-tools screen tmux zsh curl wget git vim
 
 
-## Bootstrap my config files
-git clone git@github.com:vs4vijay/dotfiles.git ~/dotfiles
-bash ~/dotfiles/bootstrap.sh
+## Generate SSH Keys
+function generate_ssh_key() {
+  pub="$HOME/.ssh/id_ed25519.pub"
+  echo "[+] Checking for SSH key, generating one if it does not exist..."
+  [[ -f $pub ]] || ssh-keygen -t ed25519
+}
+
+generate_ssh_key
 
 
 ## Install mosh
@@ -38,8 +43,7 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			       ${ZSH
 
 ## tmux Plugins
 git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
-# ln -v -s -f ~/.tmux/.tmux.conf
-# cp ~/.tmux/.tmux.conf.local ~
+ln -sv ~/.tmux/.tmux.conf
 
 
 ## Install Fonts
@@ -65,23 +69,11 @@ sudo apt-get install silversearcher-ag htop ranger tree ncdu mtr jq
 # sudo apt-get install youtube-dl
 
 
-## Install Programming Tools
-sudo apt-get install python3 python3-pip
-
-sudo pip3 install thefuck
-
-wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb -O lsd.deb
-sudo dpkg -i lsd.deb
-rm -rf lsd.deb
-
-
-
 ## Install Softwares
 sudo apt-get install firefox chromium-browser vlc
 
 # sudo apt-get install timewarrior taskwarrior
 # sudo apt-get install wine
-
 sudo snap install standard-notes
 
 
@@ -106,15 +98,13 @@ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium mai
 sudo apt-get update
 sudo apt-get install codium 
 
-# sudo add-apt-repository ppa:unit193/encryption
-# sudo apt update
-# sudo apt install veracrypt
 
 
-## Install Development Tools
+## Install Programming & Development Tools
 
-mkdir -p "${HOME}/tools"
-cd "${HOME}/tools"
+# Python3
+sudo apt-get install python3 python3-pip
+
 
 # NodeJS and npm
 sudo curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o /usr/local/bin/n
@@ -163,11 +153,19 @@ wget -c https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_
 # sudo snap install goland --classic
 
 
-## Other Softwares
+## Misc
+sudo pip3 install thefuck
+
+wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb -O lsd.deb
+sudo dpkg -i lsd.deb
+rm -rf lsd.deb
+
+
 # sudo apt-get install wallch
 
-
-## Misc
+# sudo add-apt-repository ppa:unit193/encryption
+# sudo apt update
+# sudo apt install veracrypt
 
 # sudo apt-get install libgconf2-dev
 # sudo apt-get install xclip
@@ -180,15 +178,9 @@ wget -c https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_
 # Cryptomator
 # Obsidian
 # getsession
-# keepassxc
-# sudo snap install keepassxc
+# keepassxc - sudo snap install keepassxc
 
 
-## Bootstrapping
-function generate_ssh_key() {
-  pub="$HOME/.ssh/id_ed25519.pub"
-  echo "[+] Checking for SSH key, generating one if it does not exist..."
-  [[ -f $pub ]] || ssh-keygen -t ed25519
-}
-
-generate_ssh_key
+## Bootstrap my config files
+git clone git@github.com:vs4vijay/dotfiles.git ~/dotfiles
+bash ~/dotfiles/bootstrap.sh
