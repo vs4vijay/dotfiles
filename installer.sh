@@ -134,6 +134,7 @@ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 sudo apt-get update
 sudo apt-get install kubectl
 # sudo apt-get install kubeadm kubelet
+# sudo curl --output /usr/local/sbin/kubectl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
 
 # Kubernetes Cluster: Kind

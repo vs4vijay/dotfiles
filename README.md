@@ -90,6 +90,20 @@ rm -rf ~/fonts
 chsh -s $(which zsh)
 ```
 
+- Tmux Commands and Shortcut Keys
+  - `tmux new -s <session-name>`
+  - `tmux ls`
+  - `tmux attach -t <session-name>`
+  - <prefix> + c - Create a window
+  - <prefix> + x - Kill current pane
+  - <prefix> + $ - Rename session
+  - <prefix> + , - Rename window
+  - <prefix> + d - Deattach
+  - <prefix> + w - List windows
+  - <prefix> + q - Show pane numbers
+  - <prefix> + ! - Break a pane to window
+
+
 ---
 
 ## Misc Softwares and Tools
