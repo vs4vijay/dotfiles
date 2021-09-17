@@ -111,6 +111,14 @@ chsh -s $(which zsh)
 - KDE Plasma Desktop Environment: `sudo apt-get install kde-plasma-desktop plasma-nm`
 - Yakuake Drop-down Terminal / Guake Terminal
 - Preload tool - `sudo apt-get install preload`
+  
+---
+  
+## Windows Specific
+  
+- Windows Terminal + Cmder
+  - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
+- Winget
 
 ---
 
