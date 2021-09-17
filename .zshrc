@@ -76,7 +76,7 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
 export GO111MODULE=on
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config.yml:$HOME/.kube/kubesail_config"
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config.yml:$HOME/.kube/kubesail_config:$HOME/.kube/aks_non-prod.yml"
 
 # export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
@@ -94,6 +94,7 @@ alias erc="$EDITOR ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ls="lsd"
 alias ln="ln -v"
+alias tx="tmuxinator"
 
 # vim
 alias vi="vim"
@@ -102,6 +103,7 @@ alias vi="vim"
 alias grep="grep --color=auto"
 
 alias todo="$EDITOR ~/todo.txt"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
 alias qw="ssh azpixel python3 qw --target"
@@ -118,6 +120,10 @@ alias activate_venv="source .venv/bin/activate"
 
 
 ## Functions
+function mkcd() { 
+  mkdir -vp "$1" && cd "$1"; 
+} 
+
 function change_tor_node() {
   echo -e 'AUTHENTICATE ""\r\nsignal NEWNYM\r\nQUIT' | nc 127.0.0.1 9051
   tip
@@ -157,3 +163,4 @@ alias python=python3
 
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
+if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
