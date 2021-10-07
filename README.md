@@ -192,5 +192,6 @@ https://avatars3.githubusercontent.com/u/65011256?s=200&v=4
 ---
   
   wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
+  curl https://archive.kali.org/archive-key.asc | sudo apt-key add
   
 ```
