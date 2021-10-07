@@ -188,4 +188,9 @@ Icons:
 https://avatars3.githubusercontent.com/u/11850518?s=200&v=4
 https://avatars3.githubusercontent.com/u/65011256?s=200&v=4
 
+  
+---
+  
+  wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
+  
 ```
