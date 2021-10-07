@@ -121,6 +121,50 @@ chsh -s $(which zsh)
 - Winget
 
 ---
+  
+## Security 
+  
+- Enable monitor mode on wifi card (If supported)
+```bash
+sudo ip dev
+
+sudo ip link set wlan0 down
+sudo iw wlan0 set monitor control
+sudo ip link set wlan0 up
+  
+# OR
+
+sudo ifconfig
+
+sudo ifconfig wlan0 down
+sudo iwconfig wlan0 mode monitor
+sudo ifconfig wlan0 up
+  
+sudo iwconfig wlan0 mode managed
+```
+  
+---
+  
+## Termux
+  
+```
+pkg up -y
+
+pkg install root-repo
+
+pkg install aircrack-ng
+```
+
+---
+  
+## Troubleshooting
+- Add gpg keys
+```
+wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
+curl https://archive.kali.org/archive-key.asc | sudo apt-key add -
+```
+  
+---
 
 ### In-progress Work
 
@@ -187,17 +231,6 @@ norm=$(tput sgr0)
 Icons:
 https://avatars3.githubusercontent.com/u/11850518?s=200&v=4
 https://avatars3.githubusercontent.com/u/65011256?s=200&v=4
-
   
----
-  
-  wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
-  curl https://archive.kali.org/archive-key.asc | sudo apt-key add -
-  
-sudo ip dev
-
-sudo ip link set wlan0 down
-sudo iw wlan0 set monitor control
-sudo ip link set wlan0 up  
   
 ```
