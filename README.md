@@ -125,6 +125,7 @@ chsh -s $(which zsh)
   
 ## Security 
   
+- Check if any wifi card supports monitor mode - `iw list | grep -i monitor`
 - Enable monitor mode on wifi card (If supported)
 ```bash
 sudo ip dev
