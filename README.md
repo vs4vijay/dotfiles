@@ -111,6 +111,7 @@ chsh -s $(which zsh)
 - KDE Plasma Desktop Environment: `sudo apt-get install kde-plasma-desktop plasma-nm`
 - Yakuake Drop-down Terminal / Guake Terminal
 - Preload tool - `sudo apt-get install preload`
+- Clean up Apt - `sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove`
   
 ---
   
