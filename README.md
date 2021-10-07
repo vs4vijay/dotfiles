@@ -74,11 +74,18 @@ config config status.showUntrackedFiles no
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
 ```
 
+- Configure Locale
+
+```shell
+sudo apt-get install locales
+sudo dpkg-reconfigure locales
+```
+
 - Use patched fonts on terminal:
 ```shell
 sudo apt-get install fonts-powerline
 
-OR
+# OR
 
 git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
 bash ~/fonts/install.sh
@@ -127,7 +134,7 @@ chsh -s $(which zsh)
   
 - Check if any wifi card supports monitor mode - `iw list | grep -i monitor`
 - Enable monitor mode on wifi card (If supported)
-```bash
+```shell
 sudo ip dev
 
 sudo ip link set wlan0 down
@@ -149,7 +156,7 @@ sudo iwconfig wlan0 mode managed
   
 ## Termux
   
-```
+```shell
 pkg up -y
 
 pkg install root-repo
@@ -161,7 +168,7 @@ pkg install aircrack-ng
   
 ## Troubleshooting
 - Add gpg keys
-```
+```shell
 wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
 curl https://archive.kali.org/archive-key.asc | sudo apt-key add -
 ```
