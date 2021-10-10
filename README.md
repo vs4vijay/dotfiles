@@ -132,12 +132,15 @@ chsh -s $(which zsh)
 
 ## WSL
   
-- /etc/wsl/conf
+- /etc/wsl.conf
 ```
 [network]
 generateResolvConf = false
 ```
-  
+- /etc/resolv.conf
+```
+nameserver 8.8.8.8
+```
 ---
   
 ## Security 
