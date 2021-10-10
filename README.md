@@ -129,6 +129,16 @@ chsh -s $(which zsh)
 - Winget
 
 ---
+
+## WSL
+  
+- /etc/wsl/conf
+```
+[network]
+generateResolvConf = false
+```
+  
+---
   
 ## Security 
   
