@@ -15,6 +15,8 @@ function bootstrap() {
 	ln -sv ~/dotfiles/.config/i3/config ~/.config/i3/config
 
 	mkdir -p "${HOME}/tools"
+
+	vim +PluginInstall +qall
 }
 
 

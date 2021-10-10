@@ -12,8 +12,8 @@ sudo apt-get install build-essential ruby-dev libssl-dev libpcap-dev net-tools s
 
 ## Generate SSH Keys
 function generate_ssh_key() {
-  pub="$HOME/.ssh/id_ed25519.pub"
   echo "[+] Checking for SSH key, generating one if it does not exist..."
+  local pub="$HOME/.ssh/id_ed25519.pub"
   [[ -f $pub ]] || ssh-keygen -t ed25519
 }
 
@@ -43,7 +43,7 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			       ${ZSH
 
 ## tmux Plugins
 git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
-ln -sv ~/.tmux/.tmux.conf
+# ln -sv ~/.tmux/.tmux.conf
 
 
 ## Install Fonts
@@ -118,7 +118,7 @@ sudo apt-get update
 sudo apt-get install --no-install-recommends yarn
 
 # Go
-wget -c https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://golang.org/dl/go1.17.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 
 # AWS related tool
 # curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
@@ -143,7 +143,7 @@ sudo apt-get install kubectl
 
 # Other tools: k9s, lazydocker
 curl -sS https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-wget -c https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_64.tar.gz -O - | sudo tar -xz -C /usr/local/bin
+wget -c https://github.com/derailed/k9s/releases/download/v0.24.15/k9s_Linux_x86_64.tar.gz -O - | sudo tar -xz -C /usr/local/bin
 
 
 # Virtual Box
@@ -157,7 +157,7 @@ wget -c https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_
 ## Misc
 sudo pip3 install thefuck
 
-wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb -O lsd.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb -O lsd.deb
 sudo dpkg -i lsd.deb
 rm -rf lsd.deb
 
