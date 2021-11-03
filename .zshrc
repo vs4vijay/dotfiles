@@ -107,7 +107,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
 alias qw="ssh azpixel python3 qw --target"
-alias zz_bettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
+alias zzbettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
 
 # fzf options
 export FZF_DEFAULT_OPTS="--color bw --reverse --border"
@@ -129,14 +129,27 @@ function change_tor_node() {
   tip
 }
 
-function zz_extract_handshake() {
-	captured_pcap="$1"
-	filter_bssid="$2"
-	target_pcap="$3"
+function zzxtract_handshake() {
+	local captured_pcap="$1"
+	local filter_bssid="$2"
+	local target_pcap="$3"
 	[[ "${target_pcap}" == "" ]] && target_pcap="${filter_bssid}" || target_pcap="$3"
 	
 	echo "[+] Extracting Handshake: ${filter_bssid} > ${target_pcap}.cap"
 	tshark -r "${captured_pcap}" -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype == 0x05 || eapol) && wlan.addr == ${filter_bssid}" -2 -F pcap -w "${target_pcap}.cap" 
+}
+
+function zzkali() {
+  if [[ -z $(vmrun.exe list | grep -i kali) ]]; then
+    echo "Starting Kali"
+
+    vmrun.exe -T player start "M:/VM/kali-linux-2021.3-vmware-amd64.vmwarevm/Kali-Linux-2021.3-vmware-amd64.vmx"
+  fi
+
+  echo "Connecting to Kali"
+  until ssh -o ConnectTimeout=2 viz@kali
+    do sleep 1
+  done
 }
 
 
