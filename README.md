@@ -188,11 +188,26 @@ pkg install aircrack-ng
 ---
   
 ## Troubleshooting
+
+- Add apt source
+
+```shell
+sudo apt-add-repository 'deb http://myserver/path/to/repo stable myrepo'
+
+# OR
+
+sudo echo "deb <url>" | sudo tee -a /etc/apt/sources.list.d/<file>
+```
+
 - Add gpg keys
 ```shell
+curl -fsSL https://archive.kali.org/archive-key.asc | sudo apt-key add -
+
+# OR
+
 wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
-curl https://archive.kali.org/archive-key.asc | sudo apt-key add -
 ```
+
   
 ---
 
