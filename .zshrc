@@ -7,7 +7,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   sudo
   man
-  osx
+  macos
   extract
   command-not-found
 
@@ -106,7 +106,7 @@ alias todo="$EDITOR ~/todo.txt"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
-alias qw="ssh azpixel python3 qw --target"
+alias qw="ssh kali python3 qw --target"
 alias zzbettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
 
 # fzf options
