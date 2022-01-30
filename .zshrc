@@ -102,7 +102,7 @@ alias vi="vim"
 
 alias grep="grep --color=auto"
 
-alias todo="$EDITOR ~/todo.txt"
+alias todo="$EDITOR ~/notes/todo.txt"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias cip="curl https://wtfismyip.com/json"
 alias tip="torify curl https://wtfismyip.com/json"
