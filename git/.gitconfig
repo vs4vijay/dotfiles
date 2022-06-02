@@ -12,3 +12,4 @@
 
 [core]
 	compression = 9
+	autocrlf = true
