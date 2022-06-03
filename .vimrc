@@ -61,6 +61,9 @@ Plugin 'prettier/vim-prettier'
 Plugin 'pangloss/vim-javascript'
 Plugin 'fatih/vim-go'
 
+Plugin 'vimwiki/vimwiki'
+Plugin 'git@github.com:michal-h21/vimwiki-sync.git'
+
 call vundle#end()
 
 
@@ -78,6 +81,7 @@ endif
 let g:airline_theme='luna'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:vimwiki_list = [{'path': '~/notes/', 'syntax': 'markdown', 'ext': '.md'}]
 
 
 map <C-n> :NERDTreeToggle<CR>
