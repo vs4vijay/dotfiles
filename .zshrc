@@ -41,6 +41,7 @@ autoload bashcompinit && bashcompinit
 
 
 ## Sourcing
+source ~/.profile
 source $ZSH/oh-my-zsh.sh
 [[ -f ~/.fzf.zsh  ]] && source ~/.fzf.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh 
@@ -64,7 +65,7 @@ export LC_CTYPE="${LANGUAGE}"
 
 export EDITOR=vim
 export PAGER=less
-export PATH="/usr/local/sbin:~/bin:~/.local/bin:$PATH"
+export PATH="/usr/local/sbin:~/bin:~/.local/bin:/home/viz/.local/bin:$PATH"
 export PATH="$HOME/tools:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
@@ -180,3 +181,6 @@ alias python=python3
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
 if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export PNPM_HOME="/home/viz/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
