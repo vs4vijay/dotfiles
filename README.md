@@ -127,6 +127,8 @@ chsh -s $(which zsh)
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
 - Winget
+  - winget install JetBrains.IntelliJIDEA.Community
+  - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
 
 ---
 
