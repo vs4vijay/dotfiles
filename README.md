@@ -129,6 +129,7 @@ chsh -s $(which zsh)
 - Winget
   - winget install Python.Python.3.10
   - winget install OpenJS.NodeJS.LTS
+  - winget install GoLang.Go.1.19
   - winget install Notepad++.Notepad++
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
