@@ -127,6 +127,7 @@ chsh -s $(which zsh)
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
 - Winget
+  - winget install Git.Git
   - winget install 7zip.7zip
   - winget install Python.Python.3.10
   - winget install OpenJS.NodeJS.LTS
