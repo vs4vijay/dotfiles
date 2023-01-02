@@ -4,7 +4,7 @@
 
 ```javascript
 javascript:(() => {  
-    const message = encodeURIComponent(document.getSelection().toString().replace(/(<br>)|(<br\/>)/, "\n"));
+    const message = document.getSelection().toString().replace(/(<br>)|(<br\/>)/, '\n');
     fetch('https://ntfy.sh/vizext', { method: 'POST', body: message || window.location }); 
 })();
 ```
