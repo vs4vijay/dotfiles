@@ -90,7 +90,7 @@ export LD_LIBRARY_PATH="/opt/oracle/instantclient_19_9"
 
 # WSL and X-Server (vcxsrv)
 # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
-export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0.0
+# export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
 ## Aliases
