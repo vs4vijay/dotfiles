@@ -145,6 +145,7 @@ chsh -s $(which zsh)
   - winget install Notepad++.Notepad++
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
+  - winget install magic-wormhole
 
 ---
 
@@ -295,5 +296,6 @@ Icons:
 https://avatars3.githubusercontent.com/u/11850518?s=200&v=4
 https://avatars3.githubusercontent.com/u/65011256?s=200&v=4
   
-  
+magic-wormhole
+
 ```
