@@ -145,7 +145,10 @@ chsh -s $(which zsh)
   - winget install Notepad++.Notepad++
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
+  - winget install sysinternals
   - winget install magic-wormhole
+- PowerToys
+- DevToys
 
 ---
 
