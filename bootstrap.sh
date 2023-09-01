@@ -7,7 +7,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 function bootstrap() {
 	ln -sv ~/dotfiles/.zshrc ~/.zshrc
 	ln -sv ~/dotfiles/.vimrc ~/.vimrc
-	ln -sv ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+	ln -sv ~/.tmux/.tmux.conf ~/.tmux.conf
+  ln -sv ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 	ln -sv ~/dotfiles/git/.gitconfig ~/.gitconfig
 	ln -sv ~/dotfiles/.conkyrc ~/.conkyrc
 

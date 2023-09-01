@@ -12,4 +12,5 @@
 
 [core]
 	compression = 9
-	autocrlf = true
+  # autocrlf = input
+  # eol = lf

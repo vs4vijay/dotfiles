@@ -17,8 +17,18 @@ function generate_ssh_key() {
   [[ -f $pub ]] || ssh-keygen -t ed25519
 }
 
+# Clone dotfiles repo
+function clone_repo() {
+  echo "[+] Cloning dotfiles repo"
+  local repo="git@github.com:vs4vijay/dotfiles.git"
+  local repo_dir="${HOME}/dotfiles"
+  [[ -d $repo_dir ]] || git clone ${repo} ${repo_dir}
+}
+
+
 generate_ssh_key
 
+clone_repo
 
 ## Install mosh
 sudo apt-get install mosh
@@ -47,6 +57,7 @@ git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux
 
 
 ## Install Fonts
+sudo apt-get install fonts-powerline
 # Install manually from "fonts" directory
 
 # git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
@@ -119,6 +130,12 @@ sudo apt-get install --no-install-recommends yarn
 
 # Go
 wget -c https://golang.org/dl/go1.17.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install lsd from rust
+cargo install lsd
 
 # AWS related tool
 # curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
