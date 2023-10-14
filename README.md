@@ -197,6 +197,18 @@ sudo ifconfig wlan0 up
   
 sudo iwconfig wlan0 mode managed
 ```
+
+---
+
+# Setup Wireguard VPN
+- Using algo
+```bash
+#!/usr/bin/env bash
+
+export ONDEMAND_CELLULAR=true
+export SSH_TUNNELING=true
+curl -s https://raw.githubusercontent.com/trailofbits/algo/master/install.sh | sudo -E bash -x
+```
   
 ---
   
