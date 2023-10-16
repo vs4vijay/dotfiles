@@ -20,7 +20,7 @@ javascript:(() => {
 wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash -x
 
 @ with curl
-curl https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -s | bash -x
+curl -s https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh | bash -x
 ```
 
 ## Installation via Git
