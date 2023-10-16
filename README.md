@@ -13,10 +13,14 @@ javascript:(() => {
 
 ## Installation via Installer
 
-- Install Terminator: `sudo apt-get install terminator wget`
+- Install Terminator: `sudo apt-get install terminator wget curl`
 - Open Terminator and Run following commands:
 ```shell
-wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash
+# with wget
+wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash -x
+
+@ with curl
+curl https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -s | bash -x
 ```
 
 ## Installation via Git
