@@ -144,11 +144,13 @@ chsh -s $(which zsh)
 - Winget
   - winget install Git.Git
   - winget install 7zip.7zip
-  - winget install Python.Python.3.10
+  - winget install Python.Python.3.11
   - winget install OpenJS.NodeJS.LTS
   - winget install GoLang.Go.1.19
   - winget install Microsoft.OpenJDK.17
   - winget install Notepad++.Notepad++
+  - winget install Microsoft.VisualStudioCode
+  - winget install Microsoft.VisualStudioCode.Insiders
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
   - winget install neovim
