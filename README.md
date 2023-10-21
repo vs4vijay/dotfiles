@@ -151,6 +151,7 @@ chsh -s $(which zsh)
   - winget install Notepad++.Notepad++
   - winget install Microsoft.VisualStudioCode
   - winget install Microsoft.VisualStudioCode.Insiders
+  - winget install Microsoft.VisualStudio.2022.Enterprise
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
   - winget install neovim
