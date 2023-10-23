@@ -159,7 +159,7 @@ chsh -s $(which zsh)
   - winget install microsoft.powertoys
   - winget install sysinternals
   - winget install magic-wormhole
-  - winget install -e --id RedHat.Podman-Desktop
+  - winget install RedHat.Podman RedHat.Podman-Desktop
 - PowerToys
 - DevToys
 
