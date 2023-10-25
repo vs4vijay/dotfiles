@@ -160,6 +160,8 @@ chsh -s $(which zsh)
   - winget install sysinternals
   - winget install magic-wormhole
   - winget install RedHat.Podman RedHat.Podman-Desktop
+  - winget install Google.PlatformTools
+  - winget install Google.AndroidStudio
 - PowerToys
 - DevToys
 
