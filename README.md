@@ -159,9 +159,11 @@ chsh -s $(which zsh)
   - winget install microsoft.powertoys
   - winget install sysinternals
   - winget install magic-wormhole
-  - winget install RedHat.Podman RedHat.Podman-Desktop
+  - winget install RedHat.Podman
+  - winget install -e --id RedHat.Podman-Desktop
   - winget install Google.PlatformTools
   - winget install Google.AndroidStudio
+  - winget install -e --id Adobe.Acrobat.Reader.64-bit
 - PowerToys
 - DevToys
 
