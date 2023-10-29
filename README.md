@@ -214,6 +214,18 @@ sudo iwconfig wlan0 mode managed
 
 ---
 
+# Containers
+
+## Setup Docker
+
+```bash
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $(whoami)
+exit
+```
+
+---
+
 # Setup Wireguard VPN
 - Using algo
 ```bash
