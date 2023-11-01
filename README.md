@@ -170,6 +170,8 @@ chsh -s $(which zsh)
 ---
 
 ## WSL
+
+- Enable WSL - https://www.kali.org/docs/wsl/wsl-preparations/
   
 - /etc/wsl.conf
 ```
