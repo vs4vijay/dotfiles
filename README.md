@@ -147,22 +147,26 @@ chsh -s $(which zsh)
   - winget install Python.Python.3.11
   - winget install OpenJS.NodeJS.LTS
   - winget install GoLang.Go.1.19
+  - winget install Rustlang.Rustup
   - winget install Microsoft.OpenJDK.17
   - winget install Notepad++.Notepad++
   - winget install Microsoft.VisualStudioCode
   - winget install Microsoft.VisualStudioCode.Insiders
   - winget install Microsoft.VisualStudio.2022.Enterprise
   - winget install Microsoft.VisualStudio.2022.BuildTools
+  - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
   - winget install neovim
-  - winget install microsoft.powertoys
+  - winget install Microsoft.PowerToys
+  - winget install Bruno.Bruno
   - winget install sysinternals
+  - winget install VideoLAN.VLC
   - winget install magic-wormhole
-  - winget install RedHat.Podman
-  - winget install -e --id RedHat.Podman-Desktop
   - winget install Google.PlatformTools
   - winget install Google.AndroidStudio
+  - winget install RedHat.Podman
+  - winget install -e --id RedHat.Podman-Desktop
   - winget install -e --id Adobe.Acrobat.Reader.64-bit
 - PowerToys
 - DevToys
