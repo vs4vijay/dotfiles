@@ -146,6 +146,7 @@ chsh -s $(which zsh)
   - winget install 7zip.7zip
   - winget install Python.Python.3.11
   - winget install OpenJS.NodeJS.LTS
+  - winget install CoreyButler.NVMforWindows
   - winget install GoLang.Go.1.19
   - winget install Rustlang.Rustup
   - winget install Microsoft.OpenJDK.17
