@@ -65,6 +65,10 @@ config config status.showUntrackedFiles no
   - Theme: https://github.com/vim-airline/vim-airline
   - Other Vim Themes:
     - https://github.com/joshdick/onedark.vim
+  - Community Configs:
+    - LunarVim
+    - NvChad
+    - AstroNvim
 - Tmux:
   - .tmux - https://github.com/gpakosz/.tmux
   - tmuxinator - https://github.com/tmuxinator/tmuxinator
@@ -162,6 +166,10 @@ chsh -s $(which zsh)
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
   - winget install neovim
+    - git clone https://github.com/NvChad/starter --depth 1 $USERPROFILE/AppData/Local/nvchad
+    - git clone https://github.com/LunarVim/LunarVim --depth 1 $USERPROFILE/AppData/Local/lunarvim
+    - NVIM_APPNAME=nvchad nvim
+    - NVIM_APPNAME=lunarvim nvim
   - winget install Microsoft.PowerToys
   - winget install Bruno.Bruno
   - winget install sysinternals
