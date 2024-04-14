@@ -155,6 +155,7 @@ chsh -s $(which zsh)
   - winget install Microsoft.VisualStudioCode.Insiders
   - winget install Microsoft.VisualStudio.2022.Enterprise
   - winget install Microsoft.VisualStudio.2022.BuildTools
+  - winget install MSYS2.MSYS2
   - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
