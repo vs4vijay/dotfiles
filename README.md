@@ -83,6 +83,7 @@ config config status.showUntrackedFiles no
     - https://github.com/tonsky/FiraCode
     - https://github.com/JetBrains/JetBrainsMono
     - https://github.com/adobe-fonts/source-code-pro
+- pip install -U yt-dlp[default]
 
 ---
 
