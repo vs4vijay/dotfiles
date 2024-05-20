@@ -161,6 +161,7 @@ chsh -s $(which zsh)
   - winget install Microsoft.VisualStudio.2022.Enterprise
   - winget install Microsoft.VisualStudio.2022.BuildTools
   - winget install MSYS2.MSYS2
+    - pacman -Syu
     - pacman -S mingw-w64-ucrt-x86_64-gcc
     - Add `C:\msys64\ucrt64\bin` to PATH
   - winget install Microsoft.AzureCLI
