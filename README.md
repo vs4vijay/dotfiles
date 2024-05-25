@@ -1,6 +1,6 @@
 # dotfiles
 
-Keys: https://github.com/vs4vijay.keys
+SSH Public Keys: https://github.com/vs4vijay.keys
 
 ## Bookmarklets
 
@@ -16,11 +16,14 @@ javascript:(() => {
 - Install Terminator: `sudo apt-get install terminator wget curl`
 - Open Terminator and Run following commands:
 ```shell
-# with wget
-wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash -x
-
 @ with curl
 curl -s https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh | bash -x
+sh -c "$(curl -fsSL https://raw.github.com/vs4vijay/dotfiles/master/installer.sh)"
+
+# with wget
+wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash -x
+sh -c "$(wget -qO - https://raw.github.com/vs4vijay/dotfiles/master/installer.sh)"
+
 ```
 
 ## Installation via Git
