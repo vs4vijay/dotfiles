@@ -35,7 +35,7 @@ cd dotfiles
 bash installer.sh
 ```
 
-## Another Way to Manage dotfiles
+## Another way to manage dotfiles
 
 ```shell
 git init --bare ~/.dotfiles
@@ -86,7 +86,8 @@ config config status.showUntrackedFiles no
     - https://github.com/tonsky/FiraCode
     - https://github.com/JetBrains/JetBrainsMono
     - https://github.com/adobe-fonts/source-code-pro
-- pip install -U yt-dlp[default]
+- `pip install -U yt-dlp[default]`
+- `pip install -U pyinfra`
 
 ---
 
@@ -97,27 +98,11 @@ config config status.showUntrackedFiles no
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
 ```
 
-- Configure Locale
-
-```shell
-sudo apt-get install locales
-sudo dpkg-reconfigure locales
-```
-
-- Use patched fonts on terminal:
-```shell
-sudo apt-get install fonts-powerline
-
-# OR
-
-git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
-bash ~/fonts/install.sh
-rm -rf ~/fonts
-```
-
-- Change current shell to zsh
-```shell
-chsh -s $(which zsh)
+- Add to `~/.bashrc` to auto attach to tmux
+```bash
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
 ```
 
 - Tmux Commands and Shortcut Keys
@@ -133,6 +118,28 @@ chsh -s $(which zsh)
   - <prefix> + q - Show pane numbers
   - <prefix> + ! - Break a pane to window
 
+- Configure Locale
+```shell
+sudo apt-get install locales
+sudo dpkg-reconfigure locales
+```
+
+- Use patched fonts on terminal
+- NerdFont
+```shell
+sudo apt-get install fonts-powerline
+
+# OR
+
+git clone --depth 1 https://github.com/powerline/fonts.git ~/fonts
+bash ~/fonts/install.sh
+rm -rf ~/fonts
+```
+
+- Change current shell to zsh
+```shell
+chsh -s $(which zsh)
+```
 
 ---
 
@@ -157,6 +164,7 @@ chsh -s $(which zsh)
   - winget install CoreyButler.NVMforWindows
   - winget install GoLang.Go.1.19
   - winget install Rustlang.Rustup
+  - winget install Microsoft.WSL
   - winget install Microsoft.OpenJDK.17
   - winget install Notepad++.Notepad++
   - winget install Microsoft.VisualStudioCode
@@ -245,6 +253,10 @@ sudo iwconfig wlan0 mode managed
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker $(whoami)
 exit
+
+# OR 
+
+sudo apt install docker.io
 ```
 
 ---
@@ -261,7 +273,7 @@ curl -s https://raw.githubusercontent.com/trailofbits/algo/master/install.sh | s
   
 ---
   
-## Termux
+# Termux
   
 ```shell
 pkg up -y
@@ -297,7 +309,7 @@ wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add
   
 ---
 
-### In-progress Work
+### Work in-progress
 
 ```
 
