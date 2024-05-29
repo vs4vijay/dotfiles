@@ -13,16 +13,14 @@ javascript:(() => {
 
 ## Installation via Installer
 
-- Install Terminator: `sudo apt-get install terminator wget curl`
-- Open Terminator and Run following commands:
 ```shell
 @ with curl
 curl -s https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh | bash -x
-sh -c "$(curl -fsSL https://raw.github.com/vs4vijay/dotfiles/master/installer.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/vs4vijay/dotfiles/master/installer-for-win.sh)"
 
 # with wget
 wget https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh -O - | bash -x
-sh -c "$(wget -qO - https://raw.github.com/vs4vijay/dotfiles/master/installer.sh)"
+sh -c "$(wget -qO - https://raw.github.com/vs4vijay/dotfiles/master/installer-for-win.sh)"
 
 ```
 
@@ -172,9 +170,25 @@ chsh -s $(which zsh)
   - winget install Microsoft.VisualStudio.2022.Enterprise
   - winget install Microsoft.VisualStudio.2022.BuildTools
   - winget install MSYS2.MSYS2
-    - pacman -Syu
-    - pacman -S mingw-w64-ucrt-x86_64-gcc
-    - Add `C:\msys64\ucrt64\bin` to PATH
+    - Add `C:\msys64\usr\bin` and `C:\msys64\ucrt64\bin` to PATH
+    - NOT WORKING - `setx PATH "%PATH%;C:\msys64\usr\bin;C:\msys64\ucrt64\bin"`
+    - Run commands:
+      ```bash
+      pacman -Syu
+      pacman -Syyuu
+      pacman -S zsh vim openssh
+      pacman -S net-utils
+      pacman -S compression
+      pacman -S make zip
+      pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+
+
+      pacman -S mingw-w64-x86_64-{git,git-extra}
+      # pacman -S mingw-w64-ucrt-x86_64-toolchain
+      # pacman -S mingw-w64-ucrt-x86_64-gcc
+      # pacman -S mingw-w64-x86_64-toolchain
+      # pacman -S mingw-w64-ucrt-x86_64-tools-git
+      ```
   - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community
   - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
