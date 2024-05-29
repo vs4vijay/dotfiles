@@ -181,6 +181,7 @@ chsh -s $(which zsh)
       pacman -S compression
       pacman -S make zip
       pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+      # pacman -S mingw-w64-ucrt-x86_64-SDL2  mingw-w64-ucrt-x86_64-SDL2_mixer
 
 
       pacman -S mingw-w64-x86_64-{git,git-extra}
