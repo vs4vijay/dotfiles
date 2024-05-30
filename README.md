@@ -14,7 +14,7 @@ javascript:(() => {
 ## Installation via Installer
 
 ```shell
-@ with curl
+# with curl
 curl -s https://raw.githubusercontent.com/vs4vijay/dotfiles/master/installer.sh | bash -x
 sh -c "$(curl -fsSL https://raw.github.com/vs4vijay/dotfiles/master/installer-for-win.sh)"
 
@@ -176,19 +176,20 @@ chsh -s $(which zsh)
       ```bash
       pacman -Syu
       pacman -Syyuu
-      pacman -S zsh vim openssh
+      pacman -S zsh vim tmux
       pacman -S net-utils
       pacman -S compression
-      pacman -S make zip
+      pacman -S ncdu tree
+      pacman -S mingw-w64-ucrt-x86_64-fzf mingw-w64-ucrt-x86_64-lsd mingw-w64-ucrt-x86_64-ag mingw-w64-ucrt-x86_64-jq
       pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
-      # pacman -S mingw-w64-ucrt-x86_64-SDL2  mingw-w64-ucrt-x86_64-SDL2_mixer
-
-
-      pacman -S mingw-w64-x86_64-{git,git-extra}
+      
+      # pacman -S mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-SDL2_mixer
       # pacman -S mingw-w64-ucrt-x86_64-toolchain
       # pacman -S mingw-w64-ucrt-x86_64-gcc
       # pacman -S mingw-w64-x86_64-toolchain
       # pacman -S mingw-w64-ucrt-x86_64-tools-git
+
+      # export MSYS=winsymlinks:nativestrict
       ```
   - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community
@@ -210,6 +211,16 @@ chsh -s $(which zsh)
   - winget install -e --id Adobe.Acrobat.Reader.64-bit
 - PowerToys
 - DevToys
+- Microsoft Terminal entry:
+  ```json 
+    {
+      "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64 -use-full-path -shell zsh",
+      "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d115}",
+      "icon": "C:/msys64/ucrt64.ico",
+      "name": "Terminal",
+      "startingDirectory": "C:/Users/%USERNAME%"
+    },
+  ```
 
 ---
 

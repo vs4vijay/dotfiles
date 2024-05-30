@@ -51,9 +51,7 @@ function setup_msys2() {
   pacman -S ncdu tree
   pacman -S mingw-w64-ucrt-x86_64-fzf mingw-w64-ucrt-x86_64-lsd mingw-w64-ucrt-x86_64-ag mingw-w64-ucrt-x86_64-jq
   pacman -S mingw-w64-nerd-fonts
-  # pacman -S mingw-w64-ucrt-x86_64-jq
   # pacman -S mingw-w64-ucrt-x86_64-yarn
-  # pacman -S make
   pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 }
 
