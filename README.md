@@ -4,12 +4,18 @@ SSH Public Keys: https://github.com/vs4vijay.keys
 
 ## Bookmarklets
 
+Notepad in Tab
+```javascript
+data:text/html,<html contenteditable onload="document.body.innerHTML = localStorage['text']" oninput="localStorage['text'] = document.body.innerHTML" style="line-height:1.5;font-size:20px;">
+```
+
 ```javascript
 javascript:(() => {  
     const message = document.getSelection().toString().replace(/(<br>)|(<br\/>)/, '\n');
     fetch('https://ntfy.sh/vizext', { method: 'POST', body: message || window.location }); 
 })();
 ```
+
 
 ## Installation via Installer
 
@@ -180,16 +186,20 @@ chsh -s $(which zsh)
       pacman -S net-utils
       pacman -S compression
       pacman -S ncdu tree
+      pacman -S pactoys
       pacman -S mingw-w64-ucrt-x86_64-fzf mingw-w64-ucrt-x86_64-lsd mingw-w64-ucrt-x86_64-ag mingw-w64-ucrt-x86_64-jq
       pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
       
       # pacman -S mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-SDL2_mixer
-      # pacman -S mingw-w64-ucrt-x86_64-toolchain
       # pacman -S mingw-w64-ucrt-x86_64-gcc
       # pacman -S mingw-w64-x86_64-toolchain
-      # pacman -S mingw-w64-ucrt-x86_64-tools-git
 
       # export MSYS=winsymlinks:nativestrict
+
+      mkpasswd -l -c > /etc/passwd
+      mkgroup -l -c > /etc/group
+      sed -i '/^passwd:/ s/.*/passwd:         files/' /etc/nsswitch.conf
+      sed -i '/^group:/ s/.*/group:          files/' /etc/nsswitch.conf
       ```
   - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community

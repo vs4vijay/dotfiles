@@ -49,6 +49,7 @@ function setup_msys2() {
   pacman -S net-utils
   pacman -S compression
   pacman -S ncdu tree
+  pacman -S pactoys
   pacman -S mingw-w64-ucrt-x86_64-fzf mingw-w64-ucrt-x86_64-lsd mingw-w64-ucrt-x86_64-ag mingw-w64-ucrt-x86_64-jq
   pacman -S mingw-w64-nerd-fonts
   # pacman -S mingw-w64-ucrt-x86_64-yarn
@@ -65,6 +66,11 @@ function setup_zsh() {
   git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone --depth 1 https://github.com/zsh-users/zsh-completions.git		     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
   git clone --depth 1 https://github.com/romkatv/powerlevel10k.git 			       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+  mkpasswd -l -c > /etc/passwd
+  mkgroup -l -c > /etc/group
+  sed -i '/^passwd:/ s/.*/passwd:         files/' /etc/nsswitch.conf
+  sed -i '/^group:/ s/.*/group:          files/' /etc/nsswitch.conf
 }
 
 function setup_tmux() {
