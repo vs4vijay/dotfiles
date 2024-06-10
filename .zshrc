@@ -71,8 +71,16 @@ export PATH="$HOME/tools:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
 
+# Brew configuration
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# History configuration
 export HISTCONTROL=ignoreboth
+# export HISTCONTROL=ignorespace:ignoredups:erasedups
+export HISTIGNORE="pwd:cd:ls:ls -all:"
+export HISTTIMEFORMAT="| %d/%m/%y %T | "
+unset HISTFILESIZE                # infinite History
+unset HISTSIZE                    # infinite History
 
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
