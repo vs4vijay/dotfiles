@@ -90,11 +90,19 @@ export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config.yml:$HOME/.kub
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
+# NodeJS ecosystem related
+export PNPM_HOME="/home/viz/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
 # export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
-export SDKMAN_DIR="${HOME}/.sdkman"
+export SDKMAN_DIR="$HOME/.sdkman"
 
-export LD_LIBRARY_PATH="/opt/oracle/instantclient_19_9"
+# fzf configuration options
+export FZF_DEFAULT_OPTS="--color bw --reverse --border"
+export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # WSL and X-Server (vcxsrv)
 # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
@@ -123,14 +131,13 @@ alias tip="torify curl https://wtfismyip.com/json"
 alias qw="ssh kali python3 qw --target"
 alias zzbettercap="sudo bettercap -iface en0 -caplet http-ui -eval 'wifi.recon on'; open http://0.0.0.0:9900/"
 
-# fzf options
-export FZF_DEFAULT_OPTS="--color bw --reverse --border"
-export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-
-# Python Related Alias
+# Python related aliases
+# alias python=python3
 alias create_venv="python3 -m venv .venv"
 alias activate_venv="source .venv/bin/activate"
+
+# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# xrdb -merge .Xresources
 
 
 ## Functions
@@ -182,15 +189,7 @@ if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
   alias gowork="cd /mnt/c/Main/Reporting"
 fi
 
-alias python=python3
-
-# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# xrdb -merge .Xresources
-
 
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
 if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-export PNPM_HOME="/home/viz/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
