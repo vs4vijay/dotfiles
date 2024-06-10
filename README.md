@@ -4,7 +4,7 @@ SSH Public Keys: https://github.com/vs4vijay.keys
 
 ## Bookmarklets
 
-Notepad in Tab
+Notepad in Browser Tab
 ```javascript
 data:text/html,<html contenteditable onload="document.body.innerHTML = localStorage['text']" oninput="localStorage['text'] = document.body.innerHTML" style="line-height:1.5;font-size:20px;">
 ```
@@ -16,6 +16,7 @@ javascript:(() => {
 })();
 ```
 
+---
 
 ## Installation via Installer
 
@@ -79,6 +80,18 @@ config config status.showUntrackedFiles no
 - Tmux:
   - .tmux - https://github.com/gpakosz/.tmux
   - tmuxinator - https://github.com/tmuxinator/tmuxinator
+  - Tmux commands and shortcut keys
+    - `tmux new -s <session-name>`
+    - `tmux ls`
+    - `tmux attach -t <session-name>`
+    - <prefix> + c - Create a window
+    - <prefix> + x - Kill current pane
+    - <prefix> + $ - Rename session
+    - <prefix> + , - Rename window
+    - <prefix> + d - Deattach
+    - <prefix> + w - List windows
+    - <prefix> + q - Show pane numbers
+    - <prefix> + ! - Break a pane to window
 - Fonts: 
   - NerdFont: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono
   - Other Fonts:
@@ -92,6 +105,7 @@ config config status.showUntrackedFiles no
     - https://github.com/adobe-fonts/source-code-pro
 - `pip install -U yt-dlp[default]`
 - `pip install -U pyinfra`
+- starship prompt - https://github.com/starship/starship
 
 ---
 
@@ -108,19 +122,6 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
   tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
 ```
-
-- Tmux Commands and Shortcut Keys
-  - `tmux new -s <session-name>`
-  - `tmux ls`
-  - `tmux attach -t <session-name>`
-  - <prefix> + c - Create a window
-  - <prefix> + x - Kill current pane
-  - <prefix> + $ - Rename session
-  - <prefix> + , - Rename window
-  - <prefix> + d - Deattach
-  - <prefix> + w - List windows
-  - <prefix> + q - Show pane numbers
-  - <prefix> + ! - Break a pane to window
 
 - Configure Locale
 ```shell
@@ -195,6 +196,7 @@ chsh -s $(which zsh)
       # pacman -S mingw-w64-x86_64-toolchain
 
       # export MSYS=winsymlinks:nativestrict
+      ln -sv /s/GitHub ~/GitHub
 
       mkpasswd -l -c > /etc/passwd
       mkgroup -l -c > /etc/group
@@ -221,6 +223,7 @@ chsh -s $(which zsh)
   - winget install -e --id Adobe.Acrobat.Reader.64-bit
 - PowerToys
 - DevToys
+- Starship
 - Microsoft Terminal entry:
   ```json 
     {
@@ -317,6 +320,8 @@ pkg up -y
 pkg install root-repo
 
 pkg install aircrack-ng
+
+pkg install starship
 ```
 
 ---
@@ -342,7 +347,6 @@ curl -fsSL https://archive.kali.org/archive-key.asc | sudo apt-key add -
 wget -O - https://re4son-kernel.com/keys/http/archive-key.asc | sudo apt-key add -
 ```
 
-  
 ---
 
 ### Work in-progress

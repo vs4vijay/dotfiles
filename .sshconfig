@@ -1,0 +1,5 @@
+Host *
+  SendEnv no
+  Compression yes
+  ControlMaster yes
+  ControlPersist 1h
