@@ -76,7 +76,9 @@ config config status.showUntrackedFiles no
   - Community Configs:
     - LunarVim
     - NvChad
+    - LazyVim
     - AstroNvim
+    - SpaceVim
 - Tmux:
   - .tmux - https://github.com/gpakosz/.tmux
   - tmuxinator - https://github.com/tmuxinator/tmuxinator
