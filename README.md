@@ -125,6 +125,23 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
 fi
 ```
 
+- `~/.ssh/config` template
+```bash
+Host *
+    ControlMaster auto
+    ControlPersist yes
+    ControlPath ~/.ssh/socket-%C
+    ServerAliveInterval 60
+    ServerAliveCountMax 5
+
+Host zzz
+    HostName zzz
+    User uuu
+    Port 22222
+    IdentityFile ~/.ssh/zzz
+
+```
+
 - Configure Locale
 ```shell
 sudo apt-get install locales
