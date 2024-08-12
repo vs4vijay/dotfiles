@@ -81,6 +81,7 @@ alias vi="vim"
 alias gst="git status"
 alias ggl="git pull origin HEAD"
 alias ggp="git push origin @"
+alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
 
 alias www="python -m http.server"
 alias grep="grep --color=auto"
