@@ -214,13 +214,19 @@ chsh -s $(which zsh)
       # pacman -S mingw-w64-ucrt-x86_64-gcc
       # pacman -S mingw-w64-x86_64-toolchain
 
-      # export MSYS=winsymlinks:nativestrict
+      # Set MSYS environment variable with Administrative Previledges to make symlinks
+      export MSYS=winsymlinks:nativestrict
       ln -sv /s/GitHub ~/GitHub
+      ln -sv ~/GitHub/dotfiles/.bashrc ~/.bashrc
+      ln -sv ~/GitHub/dotfiles/.zshrc ~/.zshrc
 
       mkpasswd -l -c > /etc/passwd
       mkgroup -l -c > /etc/group
       sed -i '/^passwd:/ s/.*/passwd:         files/' /etc/nsswitch.conf
       sed -i '/^group:/ s/.*/group:          files/' /etc/nsswitch.conf
+      # update /etc/nsswitch.conf with db_home: windows
+
+      # set HOME in environment variable to your user directory
       ```
   - winget install Microsoft.AzureCLI
   - winget install JetBrains.IntelliJIDEA.Community
