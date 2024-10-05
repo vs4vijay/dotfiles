@@ -5,6 +5,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 # git pull origin master;
 
 function bootstrap() {
+	ln -sv ~/dotfiles/.bashrc ~/.bashrc
 	ln -sv ~/dotfiles/.zshrc ~/.zshrc
 	ln -sv ~/dotfiles/.vimrc ~/.vimrc
 	ln -sv ~/.tmux/.tmux.conf ~/.tmux.conf

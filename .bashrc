@@ -3,11 +3,11 @@
 # Sourcing
 command -v starship &> /dev/null && eval "$(starship init bash)" || echo "[+] Starship prompt couldn't be loaded. Please make sure 'starship' is installed."
 command -v thefuck 2>&1 > /dev/null && eval $(thefuck --alias)
-command -v awless 2>&1 > /dev/null && source <(awless completion zsh)
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# [[ -s "$(dirname "${BASH_SOURCE[0]}")/functions.sh" ]] && source "$(dirname "${BASH_SOURCE[0]}")/functions.sh"
 
-# source <(minikube completion zsh)
-# source <(python3 -m poetry completions zsh)
+# source <(minikube completion bash)
+# source <(python3 -m poetry completions bash)
 
 # eval "$(pyenv init -)"
 # eval "$(register-python-argcomplete pmbootstrap)"
@@ -67,8 +67,8 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 
 ## Aliases
-alias erc="$EDITOR ~/.zshrc"
-alias src="source ~/.zshrc"
+alias erc="$EDITOR ~/.bashrc"
+alias src="source ~/.bashrc"
 alias ls="lsd"
 alias ln="ln -v"
 alias tx="tmuxinator"
@@ -136,11 +136,6 @@ function zzz_kali() {
   done
 }
 
-
-# Mac configuration
-if [[ "$OSTYPE" != darwin* ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
 
 # Windows WSL configuration
 if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
