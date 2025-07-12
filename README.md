@@ -183,7 +183,19 @@ Refer to README.Mac.md file
 ---
   
 ## Windows Setup
-  
+
+- Install Windows 10 IoT LTSC
+- Setup Winget CLI on Windows 10 IoT
+  ```powershell
+  $progressPreference = 'silentlyContinue'
+  Write-Information "Downloading WinGet and its dependencies..."
+  Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
+  Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.7.3/Microsoft.UI.Xaml.2.7.x64.appx -OutFile Microsoft.UI.Xaml.2.7.x64.appx
+  Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+  Add-AppxPackage Microsoft.UI.Xaml.2.7.x64.appx
+  Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  ```
 - Windows Terminal + Git Bash
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
@@ -191,17 +203,23 @@ Refer to README.Mac.md file
   ```bash
   
   # Essentials
+  winget install Microsoft.WindowsTerminal.Preview
   winget install VideoLAN.VLC
+  winget install Google.Chrome 
 
-  # Productivity
-  winget install 7zip.7zip Git.Git Microsoft.PowerToys DevToys-app.DevToys
+  # Tools
+  winget install 7zip.7zip Git.Git Microsoft.Sysinternals.Suite Microsoft.PowerToys DevToys-app.DevToys 
+  winget install StandardNotes.StandardNotes Cryptomator.Cryptomator Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase voidtools.Everything Espanso.Espanso
+  winget install starship yt-dlp.yt-dlp Rclone.Rclone Rufus.Rufus Ventoy.Ventoy
+  winget install angryziber.AngryIPScanner WireGuard.WireGuard GitHub.cli Rainmeter.Rainmeter RaspberryPiFoundation.RaspberryPiImager
 
   # Programming
   winget install Python.Python.3.11 CoreyButler.NVMforWindows Rustlang.Rustup GoLang.Go
   winget install JetBrains.IntelliJIDEA.Community JetBrains.IntelliJIDEA.Ultimate.EAP
   winget install Google.PlatformTools Google.AndroidStudio
-  winget install Microsoft.VisualStudio.2022.Enterprise Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
+  winget install Microsoft.DotNet.Framework.DeveloperPack_4 Microsoft.VisualStudio.2022.Enterprise Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
   winget install RedHat.Podman RedHat.Podman-Desktop
+  winget install ArduinoSA.IDE.stable
 
   # IDE
   winget install Notepad++.Notepad++ Microsoft.VisualStudioCode Microsoft.VisualStudioCode.Insiders neovim
@@ -209,6 +227,17 @@ Refer to README.Mac.md file
   # Advanced
   winget install Microsoft.WSL
   winget install MSYS2.MSYS2
+
+  # Plugins
+  winget install DuongDieuPhap.ImageGlass
+  winget install QL-Win.QuickLook
+
+  # Misc
+  winget install REALiX.HWiNFO TechPowerUp.GPU-Z
+
+  # RTL SDR
+  winget install Airspy.SDRSharp.DotNet9 SatDump.SatDump AlexandreRouma.SDRPlusPlus f4exb.sdrangel gqrx-sdr.gqrx
+
 
   # Extra
   winget install Adobe.Acrobat.Reader.64-bit
@@ -267,6 +296,12 @@ Refer to README.Mac.md file
 ## WSL
 
 - Enable WSL - https://www.kali.org/docs/wsl/wsl-preparations/
+
+```bash
+# cmd with administrator
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
   
 - /etc/wsl.conf
 ```
