@@ -199,9 +199,8 @@ Refer to README.Mac.md file
 - Windows Terminal + Git Bash
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
-- Winget
+- Installation with Winget
   ```bash
-  
   # Essentials
   winget install Microsoft.WindowsTerminal.Preview
   winget install VideoLAN.VLC
@@ -237,7 +236,6 @@ Refer to README.Mac.md file
 
   # RTL SDR
   winget install Airspy.SDRSharp.DotNet9 SatDump.SatDump AlexandreRouma.SDRPlusPlus f4exb.sdrangel gqrx-sdr.gqrx
-
 
   # Extra
   winget install Adobe.Acrobat.Reader.64-bit
