@@ -175,27 +175,50 @@ chsh -s $(which zsh)
 - Clean up Apt - `sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove`
   
 ---
+
+## Mac Setup
+
+Refer to README.Mac.md file
+
+---
   
-## Windows Specific
+## Windows Setup
   
+- Windows Terminal + Git Bash
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
 - Winget
-  - winget install Git.Git
-  - winget install 7zip.7zip
-  - winget install Python.Python.3.11
-  - winget install OpenJS.NodeJS.LTS
-  - winget install CoreyButler.NVMforWindows
-  - winget install GoLang.Go.1.19
-  - winget install Rustlang.Rustup
-  - winget install Microsoft.WSL
-  - winget install Microsoft.OpenJDK.17
-  - winget install Notepad++.Notepad++
-  - winget install Microsoft.VisualStudioCode
-  - winget install Microsoft.VisualStudioCode.Insiders
-  - winget install Microsoft.VisualStudio.2022.Enterprise
-  - winget install Microsoft.VisualStudio.2022.BuildTools
-  - winget install MSYS2.MSYS2
+  ```bash
+  
+  # Essentials
+  winget install VideoLAN.VLC
+
+  # Productivity
+  winget install 7zip.7zip Git.Git Microsoft.PowerToys DevToys-app.DevToys
+
+  # Programming
+  winget install Python.Python.3.11 CoreyButler.NVMforWindows Rustlang.Rustup GoLang.Go
+  winget install JetBrains.IntelliJIDEA.Community JetBrains.IntelliJIDEA.Ultimate.EAP
+  winget install Google.PlatformTools Google.AndroidStudio
+  winget install Microsoft.VisualStudio.2022.Enterprise Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
+  winget install RedHat.Podman RedHat.Podman-Desktop
+
+  # IDE
+  winget install Notepad++.Notepad++ Microsoft.VisualStudioCode Microsoft.VisualStudioCode.Insiders neovim
+
+  # Advanced
+  winget install Microsoft.WSL
+  winget install MSYS2.MSYS2
+
+  # Extra
+  winget install Adobe.Acrobat.Reader.64-bit
+  winget install OpenJS.NodeJS.LTS
+  winget install Microsoft.OpenJDK.17
+  winget install magic-wormhole
+
+  ? Starship
+  ```
+  -  MSYS Configuration
     - Add `C:\msys64\usr\bin` and `C:\msys64\ucrt64\bin` to PATH
     - NOT WORKING - `setx PATH "%PATH%;C:\msys64\usr\bin;C:\msys64\ucrt64\bin"`
     - Run commands:
@@ -228,28 +251,7 @@ chsh -s $(which zsh)
 
       # set HOME in environment variable to your user directory
       ```
-  - winget install Microsoft.AzureCLI
-  - winget install JetBrains.IntelliJIDEA.Community
-  - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
-  - winget install neovim
-    - git clone https://github.com/NvChad/starter --depth 1 $USERPROFILE/AppData/Local/nvchad
-    - git clone https://github.com/LunarVim/LunarVim --depth 1 $USERPROFILE/AppData/Local/lunarvim
-    - NVIM_APPNAME=nvchad nvim
-    - NVIM_APPNAME=lunarvim nvim
-  - winget install Microsoft.PowerToys
-  - winget install Bruno.Bruno
-  - winget install sysinternals
-  - winget install VideoLAN.VLC
-  - winget install magic-wormhole
-  - winget install Google.PlatformTools
-  - winget install Google.AndroidStudio
-  - winget install RedHat.Podman
-  - winget install -e --id RedHat.Podman-Desktop
-  - winget install -e --id Adobe.Acrobat.Reader.64-bit
-- PowerToys
-- DevToys
-- Starship
-- Microsoft Terminal entry:
+- Microsoft Terminal entry for msys2:
   ```json 
     {
       "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64 -use-full-path -shell zsh",
@@ -283,6 +285,17 @@ sudo bash -c 'echo "[network]" > /etc/wsl.conf'
 sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
 sudo chattr +i /etc/resolv.conf
 ```
+---
+
+## Vim
+
+
+Neovim Configuration
+  - git clone https://github.com/NvChad/starter --depth 1 $USERPROFILE/AppData/Local/nvchad
+  - git clone https://github.com/LunarVim/LunarVim --depth 1 $USERPROFILE/AppData/Local/lunarvim
+  - NVIM_APPNAME=nvchad nvim
+  - NVIM_APPNAME=lunarvim nvim
+
 ---
   
 ## Security 
