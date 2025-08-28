@@ -175,27 +175,77 @@ chsh -s $(which zsh)
 - Clean up Apt - `sudo apt-get clean && sudo apt-get autoremove --purge && sudo apt-get remove`
   
 ---
+
+## Mac Setup
+
+Refer to README.Mac.md file
+
+---
   
-## Windows Specific
-  
+## Windows Setup
+
+- Install Windows 10 IoT LTSC
+- Setup Winget CLI on Windows 10 IoT
+  ```powershell
+  $progressPreference = 'silentlyContinue'
+  Write-Information "Downloading WinGet and its dependencies..."
+  Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
+  Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.7.3/Microsoft.UI.Xaml.2.7.x64.appx -OutFile Microsoft.UI.Xaml.2.7.x64.appx
+  Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+  Add-AppxPackage Microsoft.UI.Xaml.2.7.x64.appx
+  Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  ```
+- Windows Terminal + Git Bash
 - Windows Terminal + Cmder
   - cmd.exe /k M:\\Tools\\Cmder\\vendor\\init.bat
-- Winget
-  - winget install Git.Git
-  - winget install 7zip.7zip
-  - winget install Python.Python.3.11
-  - winget install OpenJS.NodeJS.LTS
-  - winget install CoreyButler.NVMforWindows
-  - winget install GoLang.Go.1.19
-  - winget install Rustlang.Rustup
-  - winget install Microsoft.WSL
-  - winget install Microsoft.OpenJDK.17
-  - winget install Notepad++.Notepad++
-  - winget install Microsoft.VisualStudioCode
-  - winget install Microsoft.VisualStudioCode.Insiders
-  - winget install Microsoft.VisualStudio.2022.Enterprise
-  - winget install Microsoft.VisualStudio.2022.BuildTools
-  - winget install MSYS2.MSYS2
+- Installation with Winget
+  ```bash
+  # Essentials
+  winget install Microsoft.WindowsTerminal.Preview
+  winget install VideoLAN.VLC
+  winget install Google.Chrome 
+
+  # Tools
+  winget install 7zip.7zip Git.Git Microsoft.Sysinternals.Suite Microsoft.PowerToys DevToys-app.DevToys 
+  winget install StandardNotes.StandardNotes Cryptomator.Cryptomator Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase voidtools.Everything Espanso.Espanso
+  winget install starship yt-dlp.yt-dlp Rclone.Rclone Rufus.Rufus Ventoy.Ventoy
+  winget install angryziber.AngryIPScanner WireGuard.WireGuard GitHub.cli Rainmeter.Rainmeter RaspberryPiFoundation.RaspberryPiImager
+
+  # Programming
+  winget install Python.Python.3.11 CoreyButler.NVMforWindows Rustlang.Rustup GoLang.Go
+  winget install JetBrains.IntelliJIDEA.Community JetBrains.IntelliJIDEA.Ultimate.EAP
+  winget install Google.PlatformTools Google.AndroidStudio
+  winget install Microsoft.DotNet.Framework.DeveloperPack_4 Microsoft.VisualStudio.2022.Enterprise Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
+  winget install RedHat.Podman RedHat.Podman-Desktop
+  winget install ArduinoSA.IDE.stable
+
+  # IDE
+  winget install Notepad++.Notepad++ Microsoft.VisualStudioCode Microsoft.VisualStudioCode.Insiders neovim
+
+  # Advanced
+  winget install Microsoft.WSL
+  winget install MSYS2.MSYS2
+
+  # Plugins
+  winget install DuongDieuPhap.ImageGlass
+  winget install QL-Win.QuickLook
+
+  # Misc
+  winget install REALiX.HWiNFO TechPowerUp.GPU-Z
+
+  # RTL SDR
+  winget install Airspy.SDRSharp.DotNet9 SatDump.SatDump AlexandreRouma.SDRPlusPlus f4exb.sdrangel gqrx-sdr.gqrx
+
+  # Extra
+  winget install Adobe.Acrobat.Reader.64-bit
+  winget install OpenJS.NodeJS.LTS
+  winget install Microsoft.OpenJDK.17
+  winget install magic-wormhole
+
+  ? Starship
+  ```
+  -  MSYS Configuration
     - Add `C:\msys64\usr\bin` and `C:\msys64\ucrt64\bin` to PATH
     - NOT WORKING - `setx PATH "%PATH%;C:\msys64\usr\bin;C:\msys64\ucrt64\bin"`
     - Run commands:
@@ -228,28 +278,7 @@ chsh -s $(which zsh)
 
       # set HOME in environment variable to your user directory
       ```
-  - winget install Microsoft.AzureCLI
-  - winget install JetBrains.IntelliJIDEA.Community
-  - winget install JetBrains.IntelliJIDEA.Ultimate.EAP
-  - winget install neovim
-    - git clone https://github.com/NvChad/starter --depth 1 $USERPROFILE/AppData/Local/nvchad
-    - git clone https://github.com/LunarVim/LunarVim --depth 1 $USERPROFILE/AppData/Local/lunarvim
-    - NVIM_APPNAME=nvchad nvim
-    - NVIM_APPNAME=lunarvim nvim
-  - winget install Microsoft.PowerToys
-  - winget install Bruno.Bruno
-  - winget install sysinternals
-  - winget install VideoLAN.VLC
-  - winget install magic-wormhole
-  - winget install Google.PlatformTools
-  - winget install Google.AndroidStudio
-  - winget install RedHat.Podman
-  - winget install -e --id RedHat.Podman-Desktop
-  - winget install -e --id Adobe.Acrobat.Reader.64-bit
-- PowerToys
-- DevToys
-- Starship
-- Microsoft Terminal entry:
+- Microsoft Terminal entry for msys2:
   ```json 
     {
       "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64 -use-full-path -shell zsh",
@@ -265,6 +294,12 @@ chsh -s $(which zsh)
 ## WSL
 
 - Enable WSL - https://www.kali.org/docs/wsl/wsl-preparations/
+
+```bash
+# cmd with administrator
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
   
 - /etc/wsl.conf
 ```
@@ -283,6 +318,17 @@ sudo bash -c 'echo "[network]" > /etc/wsl.conf'
 sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
 sudo chattr +i /etc/resolv.conf
 ```
+---
+
+## Vim
+
+
+Neovim Configuration
+  - git clone https://github.com/NvChad/starter --depth 1 $USERPROFILE/AppData/Local/nvchad
+  - git clone https://github.com/LunarVim/LunarVim --depth 1 $USERPROFILE/AppData/Local/lunarvim
+  - NVIM_APPNAME=nvchad nvim
+  - NVIM_APPNAME=lunarvim nvim
+
 ---
   
 ## Security 

@@ -1,0 +1,7 @@
+[user]
+	name = Vijay Soni
+	email = vijaysoni@microsoft.com
+
+[includeIf "gitdir/i:S:/GitHub/"]
+	path = .gitconfig-vs4vijay
+
