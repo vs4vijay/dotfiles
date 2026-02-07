@@ -76,6 +76,7 @@ alias tx="tmuxinator"
 # vim
 alias vi="vim"
 # alias vim="nvim"
+alias nvchad="NVIM_APPNAME=nvchad nvim"
 
 # Git aliases
 alias gst="git status"
@@ -150,3 +151,4 @@ fi
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
 if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+eval "$(gh copilot alias -- bash)"
