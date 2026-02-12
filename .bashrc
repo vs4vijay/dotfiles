@@ -23,6 +23,7 @@ export EDITOR=vim
 export PAGER=less
 export PATH="/usr/local/sbin:$HOME/.local/bin:/home/viz/.local/bin:$PATH"
 export PATH="$HOME/tools:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 # export PATH="$HOME/.yarn/bin:$PATH"
 # export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:$PATH"
 
@@ -152,3 +153,6 @@ fi
 # . "/Users/viz/.acme.sh/acme.sh.env"
 if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 eval "$(gh copilot alias -- bash)"
+
+# Added by Agency Claude Code installer
+export PATH="C:/Users/vijaysoni/.claude-cli/currentVersion:$PATH"
