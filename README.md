@@ -142,6 +142,19 @@ Host zzz
 
 ```
 
+- `~/.gitconfig` template
+```bash
+[core]
+        sshCommand = ssh -i ~/.ssh/karbon25 -o IdentitiesOnly=yes
+
+[safe]
+        directory = F:/Github/dotfiles
+        directory = *
+[user]
+        email = vs4vijay@gmail.com
+        name = vs4vijay
+```
+
 - Configure Locale
 ```shell
 sudo apt-get install locales
@@ -207,21 +220,29 @@ Refer to README.Mac.md file
   winget install Google.Chrome 
 
   # Tools
-  winget install 7zip.7zip Git.Git Microsoft.Sysinternals.Suite Microsoft.PowerToys DevToys-app.DevToys 
-  winget install StandardNotes.StandardNotes Cryptomator.Cryptomator Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase voidtools.Everything Espanso.Espanso
-  winget install starship yt-dlp.yt-dlp Rclone.Rclone Rufus.Rufus Ventoy.Ventoy
-  winget install angryziber.AngryIPScanner WireGuard.WireGuard GitHub.cli Rainmeter.Rainmeter RaspberryPiFoundation.RaspberryPiImager
+  winget install 7zip.7zip Git.Git Microsoft.Sysinternals.Suite \
+                  Microsoft.PowerToys DevToys-app.DevToys 
+  winget install StandardNotes.StandardNotes Cryptomator.Cryptomator \
+                  Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase \
+                  voidtools.Everything Espanso.Espanso
+  winget install starship yt-dlp.yt-dlp Rclone.Rclone winfsp \
+                  Rufus.Rufus Ventoy.Ventoy
+  winget install angryziber.AngryIPScanner WireGuard.WireGuard \
+                  GitHub.cli Rainmeter.Rainmeter RaspberryPiFoundation.RaspberryPiImager
 
   # Programming
   winget install Python.Python.3.11 CoreyButler.NVMforWindows Rustlang.Rustup GoLang.Go
   winget install JetBrains.IntelliJIDEA.Community JetBrains.IntelliJIDEA.Ultimate.EAP
   winget install Google.PlatformTools Google.AndroidStudio
-  winget install Microsoft.DotNet.Framework.DeveloperPack_4 Microsoft.VisualStudio.2022.Enterprise Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
+  winget install Microsoft.DotNet.Framework.DeveloperPack_4 \
+                  Microsoft.VisualStudio.2022.Enterprise \
+                  Microsoft.VisualStudio.2022.BuildTools Microsoft.AzureCLI
   winget install RedHat.Podman RedHat.Podman-Desktop
   winget install ArduinoSA.IDE.stable
 
   # IDE
-  winget install Notepad++.Notepad++ Microsoft.VisualStudioCode Microsoft.VisualStudioCode.Insiders neovim
+  winget install Notepad++.Notepad++ Microsoft.VisualStudioCode \
+                  Microsoft.VisualStudioCode.Insiders neovim
 
   # Advanced
   winget install Microsoft.WSL
@@ -229,13 +250,14 @@ Refer to README.Mac.md file
 
   # Plugins
   winget install DuongDieuPhap.ImageGlass
-  winget install QL-Win.QuickLook
+  winget install QL-Win.QuickLook QTTabBar.QTTabBar CharlesMilette.TranslucentTB
 
   # Misc
   winget install REALiX.HWiNFO TechPowerUp.GPU-Z
 
   # RTL SDR
-  winget install Airspy.SDRSharp.DotNet9 SatDump.SatDump AlexandreRouma.SDRPlusPlus f4exb.sdrangel gqrx-sdr.gqrx
+  winget install Airspy.SDRSharp.DotNet9 SatDump.SatDump \
+                AlexandreRouma.SDRPlusPlus f4exb.sdrangel gqrx-sdr.gqrx
 
   # Extra
   winget install Adobe.Acrobat.Reader.64-bit
