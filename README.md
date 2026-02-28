@@ -226,7 +226,8 @@ Refer to README.Mac.md file
                   Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase \
                   voidtools.Everything Espanso.Espanso
   winget install starship yt-dlp.yt-dlp Rclone.Rclone winfsp \
-                  sharkdp.fd fzf ajeetdsouza.zoxide jdx.mise sxyazi.yazi
+                  sharkdp.fd fzf ajeetdsouza.zoxide jdx.mise sxyazi.yazi \
+                  BurntSushi.ripgrep.MSVC
                  
   winget install angryziber.AngryIPScanner WireGuard.WireGuard \
                   GitHub.cli Rainmeter.Rainmeter \
