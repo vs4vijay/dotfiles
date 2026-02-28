@@ -151,8 +151,12 @@ fi
 
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
-if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# added by Nix installer
+if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi
+
+# gh copilot
 eval "$(gh copilot alias -- bash)"
 
-# Added by Agency Claude Code installer
+# added by Agency Claude Code installer
 export PATH="C:/Users/vijaysoni/.claude-cli/currentVersion:$PATH"

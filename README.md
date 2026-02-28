@@ -226,9 +226,11 @@ Refer to README.Mac.md file
                   Dropbox.Dropbox KeePassXCTeam.KeePassXC Keybase.Keybase \
                   voidtools.Everything Espanso.Espanso
   winget install starship yt-dlp.yt-dlp Rclone.Rclone winfsp \
-                  Rufus.Rufus Ventoy.Ventoy
+                  sharkdp.fd fzf ajeetdsouza.zoxide jdx.mise
+                 
   winget install angryziber.AngryIPScanner WireGuard.WireGuard \
-                  GitHub.cli Rainmeter.Rainmeter RaspberryPiFoundation.RaspberryPiImager
+                  GitHub.cli Rainmeter.Rainmeter \
+                   Rufus.Rufus Ventoy.Ventoy RaspberryPiFoundation.RaspberryPiImager
 
   # Programming
   winget install Python.Python.3.11 CoreyButler.NVMforWindows Rustlang.Rustup GoLang.Go
