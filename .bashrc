@@ -151,7 +151,11 @@ fi
 
 # neofetch
 # . "/Users/viz/.acme.sh/acme.sh.env"
-if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# added by Nix installer
+if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi
+
+# gh copilot
 eval "$(gh copilot alias -- bash)"
 
 # BEGIN claude-cli MANAGED BLOCK
