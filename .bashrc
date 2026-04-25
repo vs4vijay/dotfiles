@@ -154,5 +154,8 @@ fi
 if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 eval "$(gh copilot alias -- bash)"
 
-# Added by Agency Claude Code installer
-export PATH="C:/Users/vijaysoni/.claude-cli/currentVersion:$PATH"
+# BEGIN claude-cli MANAGED BLOCK
+if [[ ":${PATH}:" != *":C:/Users/vijaysoni/.claude-cli/CurrentVersion:"* ]]; then
+    export PATH="C:/Users/vijaysoni/.claude-cli/CurrentVersion:${PATH}"
+fi
+# END claude-cli MANAGED BLOCK
