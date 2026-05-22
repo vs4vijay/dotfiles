@@ -1,25 +1,71 @@
-
+# Setup Mac
 
 
 ## Brew installation
 
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-`brew bundle`
-
-
-### Commands
-
-- `brew outdated`
-- `brew pin <formula>`
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
-- `brew uninstall --force <formula>`
-- `brew cleanup`
+brew bundle
+
+
+# other commands
+brew outdated
+brew pin name
+
+
+brew uninstall --force name
+brew cleanup`
+
+```
+
+## Apps
+
+```bash
+brew install --cask cmux iterm2
+
+brew install --cask firefox firefox@developer-edition 
+
+brew install --cask chromium zen
+
+brew install --cask keka little-snitch
+
+
+brew install --cask stats
+brew install maccy
+brew install --cask orbstack
+
+# Security
+brew install nmap
+
+brew install rtk
+
+brew install llama.cpp
+brew install --cask cursor
+```
+
+---
+
+## Shortcuts
+
+- Cmd+Ctrl+Q - Log off
+- Cmd+Q - Quit app
+- Fn - Emoji browser
+
+---
+
+## Tools
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+
+```
+
 
 ### Development Notes
 
-```
+```bash
 
 https://sourabhbajaj.com/mac-setup/SublimeText/Preferences.html
 
@@ -94,9 +140,9 @@ Host *
 
 
 
-  ## Vim
+## Vim
 
-  https://github.com/square/maximum-awesome
+https://github.com/square/maximum-awesome
 
 
 # brew install mas
@@ -107,19 +153,16 @@ Host *
 
 ~/Library/Caches
 
-
 ~/Library/Caches/pip
 
 ---
 
 ## In-progress work
 
-```
+```bash
 brew install diff-so-fancy
 
-
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -135,5 +178,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
 ```
+
+---
