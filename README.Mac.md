@@ -23,7 +23,12 @@ brew cleanup`
 ## Apps
 
 ```bash
+brew install btop
+brew install tree
+
 brew install --cask cmux iterm2
+
+brew install --cask visual-studio-code
 
 brew install --cask firefox firefox@developer-edition 
 
@@ -35,6 +40,7 @@ brew install --cask keka little-snitch
 brew install --cask stats
 brew install maccy
 brew install --cask orbstack
+brew install colima
 
 # Security
 brew install nmap
@@ -43,6 +49,7 @@ brew install rtk
 
 brew install llama.cpp
 brew install --cask cursor
+brew install --cask lm-studio
 ```
 
 ---
