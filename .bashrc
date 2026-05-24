@@ -138,6 +138,26 @@ function zzz_kali() {
   done
 }
 
+function lms-import-models() {
+  local model_dir="${1:-$HOME/models}"
+  local count=0
+  while IFS= read -r -d '' f; do
+    [[ "$(basename "$f")" == mmproj-* ]] && continue
+    local rest="${f#*models--}"
+    if [[ "$rest" != "$f" ]]; then
+      local user="${rest%%--*}"
+      local repo="${rest#*--}"
+      repo="${repo%%/*}"
+      echo "Importing: $f  (user/repo: $user/$repo)"
+      lms import -l --user-repo "$user/$repo" "$f"
+    else
+      echo "WARNING: Cannot determine user/repo, skipping: $f" >&2
+    fi
+    ((count++))
+  done < <(find "$model_dir" -name '*.gguf' -not -path '*/blobs/*' -print0)
+  echo "Done. Imported $count model(s)."
+}
+
 
 # Windows WSL configuration
 if [[ -n "$(uname -r | grep -i microsoft)" ]]; then
@@ -153,7 +173,7 @@ fi
 # . "/Users/viz/.acme.sh/acme.sh.env"
 
 # added by Nix installer
-if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi
+# if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi
 
 # gh copilot
 eval "$(gh copilot alias -- bash)"

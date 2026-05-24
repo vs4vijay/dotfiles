@@ -38,9 +38,9 @@ echo "[+] Installing packages: libraries"
 brew install openssl coreutils
 
 echo "[+] Installing packages: tools"
-brew install the_silver_searcher fzf ncdu htop
+brew install ripgrep the_silver_searcher fd fzf ncdu btop
 brew install mosh ranger
-brew install youtube-dl
+# brew install youtube-dl
 brew install thefuck tldr
 
 echo "[+] Installing packages: security tools"

@@ -23,33 +23,53 @@ brew cleanup`
 ## Apps
 
 ```bash
+brew install mas
+
 brew install btop
-brew install tree
+brew install wget tree
+brew install gh
 
+
+brew install ripgrep the_silver_searcher fd fzf
+brew install ranger bat eza
+brew install ncdu duf
+brew install jq yq
+# brew install midnight-commander nnn
+# brew install imagemagick ffmpeg
+
+
+# Productivity
 brew install --cask cmux iterm2
+brew install --cask stats
+brew install maccy
 
+# Coding
 brew install --cask visual-studio-code
+brew install --cask orbstack
+brew install colima
 
+# Browsers
 brew install --cask firefox firefox@developer-edition 
-
 brew install --cask chromium zen
 
 brew install --cask keka little-snitch
 
 
-brew install --cask stats
-brew install maccy
-brew install --cask orbstack
-brew install colima
+brew install xo/xo/usql
 
 # Security
 brew install nmap
 
+# AI LLM
 brew install rtk
-
+brew install hf
 brew install llama.cpp
-brew install --cask cursor
+brew install --cask llamabarn
 brew install --cask lm-studio
+brew install --cask cursor
+brew install --cask cmux
+brew install superset
+
 ```
 
 ---
