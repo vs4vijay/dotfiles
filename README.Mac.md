@@ -57,6 +57,11 @@ brew install --cask keka little-snitch
 
 brew install xo/xo/usql
 
+brew install font-hack-nerd-font
+
+brew install neovim
+brew install --cask neovide
+
 # Security
 brew install nmap
 

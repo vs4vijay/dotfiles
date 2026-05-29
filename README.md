@@ -118,6 +118,17 @@ config config status.showUntrackedFiles no
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "viz@soni"
 ```
 
+- .ssh/config
+```bash
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/%r@%h:%p
+  # Keep the connection open for 1 hour
+  ControlPersist 1h
+  # StrictHostKeyChecking no
+
+```
+
 - Add to `~/.bashrc` to auto attach to tmux
 ```bash
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
