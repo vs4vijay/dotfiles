@@ -42,6 +42,7 @@ brew install jq yq
 brew install --cask cmux iterm2
 brew install --cask stats
 brew install maccy
+# brew install --cask caffeine
 
 # Coding
 brew install --cask visual-studio-code
