@@ -106,27 +106,51 @@ resolve_python_with_pil() {
   echo "$tmp/venv/bin/python"
 }
 
-# Generate a per-profile, hue-shifted variant of Zen's own icon so each profile
-# looks distinct. Falls back (returns non-zero) if Pillow is unavailable.
+# Generate a randomly-colored variant of Zen's own icon, labelled with the
+# profile name. Falls back (returns non-zero) if Pillow is unavailable.
 generate_tinted_icon() {
   local out="$1" tmp; tmp="$(mktemp -d)"
   sips -s format png "$ZEN_APP/Contents/Resources/firefox.icns" --out "$tmp/base.png" >/dev/null 2>&1
   local PY; PY="$(resolve_python_with_pil "$tmp")"
   [ -n "$PY" ] || { rm -rf "$tmp"; return 1; }
   "$PY" - "$tmp/base.png" "$tmp/tinted.png" "$PROFILE" <<'PYEOF' || { rm -rf "$tmp"; return 1; }
-import sys, hashlib
-from PIL import Image
+import sys, random
+from PIL import Image, ImageDraw, ImageFont
 src, dst, profile = sys.argv[1], sys.argv[2], sys.argv[3]
 img = Image.open(src).convert('RGBA')
 r, g, b, a = img.split()
 h, s, v = Image.merge('RGB', (r, g, b)).convert('HSV').split()
-# Deterministic, clearly-visible hue derived from the profile name. Zen's icon
-# is near-grayscale, so we also raise saturation to make the tint bold.
-hue = int(hashlib.sha1(profile.encode()).hexdigest(), 16) % 256
+# Random, clearly-visible color. Zen's icon is near-grayscale, so we also raise
+# saturation to make the tint bold.
+hue = random.randint(0, 255)
 h = h.point(lambda x: hue)
 s = s.point(lambda x: max(x, 170))
 r2, g2, b2 = Image.merge('HSV', (h, s, v)).convert('RGB').split()
-Image.merge('RGBA', (r2, g2, b2, a)).save(dst)
+img = Image.merge('RGBA', (r2, g2, b2, a))
+
+# Write the profile name onto the icon for easy recognition.
+W, H = img.size
+draw = ImageDraw.Draw(img)
+def load_font(size):
+    for p in ("/System/Library/Fonts/HelveticaNeue.ttc",
+              "/System/Library/Fonts/Helvetica.ttc",
+              "/Library/Fonts/Arial.ttf"):
+        try:
+            return ImageFont.truetype(p, size)
+        except Exception:
+            pass
+    return ImageFont.load_default()
+size = int(H * 0.22)
+while size > 12:
+    font = load_font(size)
+    if draw.textlength(profile, font=font) <= W * 0.86:
+        break
+    size -= 8
+w = draw.textlength(profile, font=font)
+x, y = (W - w) / 2, H * 0.64
+draw.text((x, y), profile, font=font, fill=(255, 255, 255, 255),
+          stroke_width=max(2, size // 12), stroke_fill=(0, 0, 0, 255))
+img.save(dst)
 PYEOF
   make_icns_from_png "$tmp/tinted.png" "$out"
   rm -rf "$tmp"
@@ -177,4 +201,4 @@ touch "$APP_DIR"
   -f "$APP_DIR" >/dev/null 2>&1 || true
 
 info "Done. Created: $APP_DIR"
-echo "   Launch it, then right-click its Dock icon → Options → Keep in Dock."
+echo "   Open it from Finder or Spotlight to launch the '$PROFILE' profile."
