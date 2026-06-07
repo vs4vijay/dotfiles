@@ -25,17 +25,20 @@ brew cleanup`
 ```bash
 brew install mas
 
-brew install btop
+brew install btop fastfetch
 brew install wget tree
 brew install gh
 
 
 brew install ripgrep the_silver_searcher fd fzf
-brew install ranger bat eza
+brew install ranger yazi television broot bat 
+brew install zoxide eza 
 brew install ncdu duf
 brew install jq yq
 # brew install midnight-commander nnn
-# brew install imagemagick ffmpeg
+brew install sevenzip
+brew install ffmpeg-full imagemagick-full 
+brew install poppler resvg font-symbols-only-nerd-font
 
 
 # Productivity
@@ -43,6 +46,9 @@ brew install --cask cmux iterm2
 brew install --cask stats
 brew install maccy
 # brew install --cask caffeine
+brew install mole
+brew install clop
+brew install --cask libreoffice
 
 # Coding
 brew install --cask visual-studio-code
@@ -51,9 +57,9 @@ brew install colima
 
 # Browsers
 brew install --cask firefox firefox@developer-edition 
-brew install --cask chromium zen
+brew install --cask ungoogled-chromium chromium zen
 
-brew install --cask keka little-snitch
+brew install --cask keka
 
 
 brew install xo/xo/usql
@@ -65,6 +71,7 @@ brew install --cask neovide
 
 # Security
 brew install nmap
+# brew install --cask little-snitch
 
 # AI LLM
 brew install rtk
@@ -72,6 +79,7 @@ brew install hf
 brew install llama.cpp
 brew install --cask llamabarn
 brew install --cask lm-studio
+brew install --cask osaurus
 brew install --cask cursor
 brew install --cask cmux
 brew install superset
