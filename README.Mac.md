@@ -49,6 +49,8 @@ brew install maccy
 brew install mole
 brew install clop
 brew install --cask libreoffice
+brew install --cask TheBoredTeam/boring-notch/boring-notch
+brew install --cask fluidvoice
 
 # Coding
 brew install --cask visual-studio-code
@@ -72,6 +74,7 @@ brew install --cask neovide
 # Security
 brew install nmap
 # brew install --cask little-snitch
+brew install --cask lulu
 
 # AI LLM
 brew install rtk
@@ -83,6 +86,10 @@ brew install --cask osaurus
 brew install --cask cursor
 brew install --cask cmux
 brew install superset
+
+# Android
+brew install android-platform-tools
+brew install jadx apktool dex2jar
 
 ```
 
@@ -103,6 +110,21 @@ curl -sS https://starship.rs/install.sh | sh
 
 ```
 
+---
+
+## Menu bar
+
+```bash
+defaults -currentHost read -globalDomain NSStatusItemSpacing
+defaults -currentHost read -globalDomain NSStatusItemSelectionPadding
+
+# Note: These values are not set by default. This means you will get an error that the keys and values do not exist if you have not previously set them.
+
+# Write the defaults by providing an integer value:
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 12
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 8
+killall SystemUIServer
+```
 
 ### Development Notes
 
