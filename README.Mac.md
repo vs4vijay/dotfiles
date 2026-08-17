@@ -39,10 +39,12 @@ brew install jq yq
 brew install sevenzip
 brew install ffmpeg-full imagemagick-full 
 brew install poppler resvg font-symbols-only-nerd-font
+brew install croc
 
 
 # Productivity
 brew install --cask cmux iterm2
+brew install zsh-autosuggestions
 brew install --cask stats
 brew install maccy
 # brew install --cask caffeine
@@ -51,6 +53,7 @@ brew install clop
 brew install --cask libreoffice
 brew install --cask TheBoredTeam/boring-notch/boring-notch
 brew install --cask fluidvoice
+brew install --cask Sloth
 
 # Coding
 brew install --cask visual-studio-code
@@ -77,15 +80,20 @@ brew install nmap
 brew install --cask lulu
 
 # AI LLM
-brew install rtk
 brew install hf
+brew install rtk
 brew install llama.cpp
-brew install --cask llamabarn
+brew install --cask llama-app
 brew install --cask lm-studio
 brew install --cask osaurus
-brew install --cask cursor
 brew install --cask cmux
+# brew install --cask cursor
 brew install superset
+brew install --cask conductor
+brew install --cask draw-things
+brew install --cask claude-devtools
+# brew tap ddalcu/mlx-serve https://github.com/ddalcu/mlx-serve
+# brew install --cask mlx-core
 
 # Android
 brew install android-platform-tools
