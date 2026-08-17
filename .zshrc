@@ -16,14 +16,38 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(stern --completion=zsh)
 
 
+## Aliases
+alias erc="$EDITOR ~/.bashrc"
+alias ezrc="$EDITOR ~/.zshrc"
+alias src="source ~/.bashrc"
+alias zrc="source ~/.zshrc"
+# alias ls="lsd"
+alias ln="ln -v"
 alias gst="git status"
 alias python="python3"
+alias vi="vim"
+# alias vim="nvim"
+alias nvchad="NVIM_APPNAME=nvchad nvim"
+alias gst="git status"
+alias ggl="git pull origin HEAD"
+alias ggp="git push origin @"
+alias gitzip="git archive HEAD -o ${PWD##*/}.zip"
+alias www="python -m http.server"
+alias grep="grep --color=auto"
 alias aichat="uvx --python 3.11 open-webui@latest serve"
 alias vcodex="CODEX_HOME=~/.codex-vijay codex"
 alias vclaude="CLAUDE_CONFIG_DIR=~/.claude-vijay claude"
 
 
 export NVM_DIR="$HOME/.nvm"
+
+# History configuration
+export HISTCONTROL=ignoreboth
+# export HISTCONTROL=ignorespace:ignoredups:erasedups
+export HISTIGNORE="pwd:cd:ls:ls -all:"
+export HISTTIMEFORMAT="| %d/%m/%y %T | "
+unset HISTFILESIZE                # infinite History
+unset HISTSIZE                    # infinite History
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
@@ -33,6 +57,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/.lmstudio/bin"
 
 export FZF_DEFAULT_OPTS='--height 40% --popup bottom,40% --layout reverse --border top'
+export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 export LLAMA_SERVER_URL="http://localhost:11111"
 export LLAMA_CACHE="$HOME/models"

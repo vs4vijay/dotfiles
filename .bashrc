@@ -12,7 +12,6 @@ command -v thefuck 2>&1 > /dev/null && eval $(thefuck --alias)
 # eval "$(pyenv init -)"
 # eval "$(register-python-argcomplete pmbootstrap)"
 
-
 ## Environment Variables
 export LANGUAGE="en_US.UTF-8"
 export LANG="${LANGUAGE}"
@@ -42,18 +41,13 @@ unset HISTSIZE                    # infinite History
 # export GOPATH="$HOME/go"
 # export GO111MODULE=on
 # export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config.yml:$HOME/.kube/kubesail_config:$HOME/.kube/aks_non-prod.yml"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-
-# NodeJS ecosystem related
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/beon-dev_config.yml:$HOME/.kube/kubesail_config:$HOME/.kube/aks_non-prod.yml"
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
 # export JAVA_HOME="/usr/lib/jvm/java-14-openjdk-amd64"
-export PATH="$JAVA_HOME/bin:$PATH"
-export SDKMAN_DIR="$HOME/.sdkman"
+# export PATH="$JAVA_HOME/bin:$PATH"
+# export SDKMAN_DIR="$HOME/.sdkman"
 
 # fzf configuration options
 export FZF_DEFAULT_OPTS="--color bw --reverse --border"
@@ -63,14 +57,16 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 # WSL and X-Server (vcxsrv)
 # export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 # export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
+# export LIBGL_ALWAYS_INDIRECT=1
 
 
 
 ## Aliases
 alias erc="$EDITOR ~/.bashrc"
+alias ezrc="$EDITOR ~/.zshrc"
 alias src="source ~/.bashrc"
-alias ls="lsd"
+alias zrc="source ~/.zshrc"
+# alias ls="lsd"
 alias ln="ln -v"
 alias tx="tmuxinator"
 
@@ -176,10 +172,4 @@ fi
 # if [ -e /home/viz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/viz/.nix-profile/etc/profile.d/nix.sh; fi
 
 # gh copilot
-eval "$(gh copilot alias -- bash)"
-
-# BEGIN claude-cli MANAGED BLOCK
-if [[ ":${PATH}:" != *":C:/Users/vijaysoni/.claude-cli/CurrentVersion:"* ]]; then
-    export PATH="C:/Users/vijaysoni/.claude-cli/CurrentVersion:${PATH}"
-fi
-# END claude-cli MANAGED BLOCK
+# eval "$(gh copilot alias -- bash)"
