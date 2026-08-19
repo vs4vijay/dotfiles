@@ -40,7 +40,7 @@ alias vclaude="CLAUDE_CONFIG_DIR=~/.claude-vijay claude"
 
 
 export NVM_DIR="$HOME/.nvm"
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # History configuration
 export HISTCONTROL=ignoreboth
 # export HISTCONTROL=ignorespace:ignoredups:erasedups
@@ -49,8 +49,9 @@ export HISTTIMEFORMAT="| %d/%m/%y %T | "
 unset HISTFILESIZE                # infinite History
 unset HISTSIZE                    # infinite History
 
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+# Brew configuration
+export HOMEBREW_NO_AUTO_UPDATE=1
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -60,7 +61,7 @@ export FZF_DEFAULT_OPTS='--height 40% --popup bottom,40% --layout reverse --bord
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-export LLAMA_SERVER_URL="http://localhost:11111"
+export LLAMA_SERVER_URL="http://localhost:11000"
 export LLAMA_CACHE="$HOME/models"
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" 
@@ -71,6 +72,7 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 command -v starship 2>&1 > /dev/null && eval "$(starship init zsh)"
 command -v awless 2>&1 > /dev/null && source <(awless completion zsh)
 command -v kubectl 2>&1 > /dev/null && source <(kubectl completion zsh)
